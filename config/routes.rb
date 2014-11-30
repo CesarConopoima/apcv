@@ -1,10 +1,13 @@
 Americanparts::Application.routes.draw do
+
+
   # root :to => 'page#index'
   # get "page/index"
 
   scope "(:locale)", :locale => /en|es/ do
     root :to => 'page#index'
     get "page/index"
+    resources :products
   end
 
   # The priority is based upon order of creation:

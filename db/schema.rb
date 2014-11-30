@@ -11,6 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20141130051233) do
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "marc"
+    t.integer  "quantity"
+    t.decimal  "price"
+    t.string   "imageurl"
+    t.string   "model"
+    t.string   "addedimageurl"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
 end

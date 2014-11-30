@@ -1,0 +1,57 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+# ruby encoding: utf-8
+
+es:
+ layouts:
+  application:
+   product: "Productos"
+ products:
+  index:
+   title: "Lista de productos"
+   new_product: "Nuevo producto"
+   back_link: "Atras"
+   name: "Nombre"
+   code: "Codigo"
+   marc: "Marca"
+   quantity: "Cantidad"
+   price: "Precio"
+   imgurl: "ImgURL"
+   model: "Modelo"
+   imgurladd: "AddImgUrl"
+  edit:
+   title: "Editar Producto"
+  new:
+   title: "Nuevo producto"
+   back_link: "Atras"
+  form:
+   name: "Nombre"
+   code: "Codigo"
+   marc: "Marca"
+   quantity: "Cantidad"
+   price: "Precio"
+   imgurl: "ImgURL"
+   model: "Modelo"
+   imgurladd: "AddImgUrl"
+   submit: "Crear Producto"
+  flash_messages:
+    product_was_successfully_created: 'El producto fué creado con éxito'
+    product_was_successfully_updated: 'El producto ha sido actulizado'
+
+
+
+ # activerecord:
+ #  models:
+ #   product: 'Producto'
+ #    attributes:
+ #     product:
+ #      name: 'Nombre'
+ #      code: 'Código'
+ #      marc: 'Marca'
+ #      quantity: 'Cantidad'
+ #      price: 'Precio'
+ #      imageurl: 'ImageUrl'
+ #      model: 'Modelo'
+ #      addedimageurl: 'Foto_Cargada'
+ #      created_at: 'Creado'
+ #      updated_at: 'Actualizado'
