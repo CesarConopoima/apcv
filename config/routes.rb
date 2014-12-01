@@ -3,9 +3,10 @@ Americanparts::Application.routes.draw do
 
   # root :to => 'page#index'
   # get "page/index"
-  
+
   scope "(:locale)", :locale => /en|es/ do
-    root :to => 'page#index'
+    root :to => 'store#index'
+    get "store/index"
     get "page/index"
     resources :products
     devise_for :users

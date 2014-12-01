@@ -9,11 +9,16 @@
 #   hello: "Hello world"
 
 en:
+ store:
+  index:
+   title: "Here find producst of your brand"
+#Traduccion para layout
  layouts:
   application:
    product: "Products"
    text1: "Logged in as "
    linkLoggin: "Logout"
+#Traduccion para resourse products
  products:
   index:
    title: "Listing Products"
@@ -26,9 +31,12 @@ en:
    price: "Price"
    imgurl: "ImgURL"
    model: "Model"
+   misce: "Miscelaneus"
    imgurladd: "AddImgUrl"
   edit:
    title: "Editing Product"
+   show: "Show"
+   back: "Back"
   new:
    title: "New Product"
    back_link: "Back"
@@ -42,6 +50,8 @@ en:
    model: "Model"
    imgurladd: "AddImgUrl"
    submit: "Create Product"
-  flash_messages:
-    product_was_successfully_created: 'The product was successfully created'
-    product_was_successfully_updated: 'The product was successfully updated'
+   misce: "Miscelaneus"
+   promtmisce: "Choose si/yes or no/no"
+ flash_messages:
+  product_was_successfully_created: 'The product was successfully created'
+  product_was_successfully_updated: 'The product was successfully updated'

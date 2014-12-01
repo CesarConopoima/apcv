@@ -3,6 +3,9 @@
 # ruby encoding: utf-8
 
 es:
+ store:
+  index:
+   title: "Consiga su productos"
  layouts:
   application:
    product: "Productos"
@@ -20,9 +23,12 @@ es:
    price: "Precio"
    imgurl: "ImgURL"
    model: "Modelo"
+   misce: "Miscelaneus"
    imgurladd: "AddImgUrl"
   edit:
    title: "Editar Producto"
+   show: "Mostrar"
+   back: "Atras"
   new:
    title: "Nuevo producto"
    back_link: "Atras"
@@ -36,6 +42,8 @@ es:
    model: "Modelo"
    imgurladd: "AddImgUrl"
    submit: "Crear Producto"
+   misce: "Miscelaneus"
+   promtmisce: "Escoja si o no"
   flash_messages:
     product_was_successfully_created: 'El producto fué creado con éxito'
     product_was_successfully_updated: 'El producto ha sido actulizado'

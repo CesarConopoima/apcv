@@ -39,6 +39,11 @@
     <%= f.label :model, t('.model') %><br />
     <%= f.text_field :model %>
   </div>
+   <div class="field">
+    <%= f.label :misce, t('.misce') %><br />
+    <%= f.select :flagmis, Product::MISCELANEUS, 
+    prompt: t('.promtmisce') %>
+  </div>
   <div class="field">
     <%= f.label :addedimageurl, t('.imgurladd') %><br />
     <%= f.text_field :addedimageurl %>
