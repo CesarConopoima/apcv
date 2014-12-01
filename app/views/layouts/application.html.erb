@@ -14,18 +14,17 @@
 |
 <%= link_to_unless I18n.locale == :es, "Español", locale: :es %>
 </p>
-
 <li><%= link_to t('.product'), products_path %></li>
-
+<li><%= link_to t('.store'), store_index_path %></li>
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
   <%= t('.text1') %> <strong><%= current_user.email %></strong>.
   <%= link_to t('.linkLoggin'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
-
+<%= render 'devise/sessions/partialnew' %>
+<%= render 'layouts/menu' %>
 <%= yield %>
 
 </body>
