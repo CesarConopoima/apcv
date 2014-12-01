@@ -12,6 +12,8 @@ en:
  layouts:
   application:
    product: "Products"
+   text1: "Logged in as "
+   linkLoggin: "Logout"
  products:
   index:
    title: "Listing Products"

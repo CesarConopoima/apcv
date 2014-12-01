@@ -29,6 +29,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'rails_12factor', group: :production
 
 gem 'thin'
+
+gem 'devise'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

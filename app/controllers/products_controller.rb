@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter :ensure_common!
   # GET /products
   # GET /products.json
   def index

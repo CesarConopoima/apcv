@@ -6,6 +6,8 @@ es:
  layouts:
   application:
    product: "Productos"
+   text1: "Entró como "
+   linkLoggin: "Salir"
  products:
   index:
    title: "Lista de productos"
