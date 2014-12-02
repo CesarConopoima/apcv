@@ -2,6 +2,4 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 <h1><%= t('.title') %></h1>
-<% @Productos.each do |producto| %>
-<h3><%= producto.marc %></h3>
-<% end %>
+<%= render 'store/partialproducts' %>

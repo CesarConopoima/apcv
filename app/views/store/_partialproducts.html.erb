@@ -1,0 +1,38 @@
+<%= javascript_include_tag "zoomsl-3.0.min.js" %>
+<script>
+	jQuery(function(){
+    	$(".zoomsl").imagezoomsl({
+        	zoomrange: [4,4],
+			magnifiersize: [300,300],
+			magnifiereffectanimate: "fadeIn"
+    	});
+	});
+</script>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+ <% @products.each do |producto| %>
+	<div class="entry">
+		<h3><%= producto.name %></h3>
+		<% if !producto.addedimageurl.to_s.include?('no_dispo') %>
+        <img class="zoomsl" src="<%= image_path(producto.addedimageurl) %>" 
+        alt="" />
+        <% else %>
+      	<img class="zoomsl" src="<%= image_path(producto.imageurl) %>" 
+        alt="" />
+        <% end %>
+		<h4 class="price_line"><%= producto.marc %></h4>
+		<div class="price_line">
+			<% if user_signed_in? %>
+			<div class="price"><%= number_to_currency(producto.price, :unit=>"Bsf ") %></div>
+			<div class="price">Disponible</div>	
+		<!-- 	<%= button_to 'Agregar al Carro', line_items_path(producto_id: producto), remote: true,:class => "button" %> -->
+			<% else %>
+			<div class="price">Login for price</div>
+			<div class="price">Disponible</div>	
+			<% end %>
+		</div>
+		<div class="codigo"><%= producto.code %></div>
+	</div>
+<% end %>

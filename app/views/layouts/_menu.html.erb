@@ -13,7 +13,7 @@ a {
 
 nav {
 	position: relative;
-	width: 70%;
+	width: 99%;
 	height: 37px;
 	background: #222;
 }
@@ -126,16 +126,37 @@ ul li:hover .dropdownContain { top: 30px; }
 ul li:hover .underline { border-bottom-color: #777; }
 ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
 
+.drop a {
+	color: white;
+}
 </style>
-
 <nav>
 		<ul>
-			<% @Productos.each do |producto| %>
-		<li class="drop"><a href="#" style="color:white;"><%= producto.marc.upcase %></a></li>
-
-		<% end %>
+			<% @marcas.each do |producto| %>
 		<li class="drop">
-				<a href="#" style="color:white;">You</a>
+			<a href="#" class="link"><%= producto.marc.upcase %></a>
+			<div class="dropdownContain">
+				<div class="dropOut">
+					<div class="triangle"></div>
+					<ul>
+					<% if "#{producto.marc}" == 'Copeland' %>
+			  		<% @Busqueda = @productoCop %>
+			  		<% elsif "#{producto.marc}" == 'Carrier' %>
+			  		<% @Busqueda = @productoCarr %>
+			  		<% elsif "#{producto.marc}" == 'Bitzer' %>
+			  		<% @Busqueda = @productoBit %>
+			  		<% end %>
+			  		<% @Busqueda.each do |producto1| %>
+			  		<li><%= producto1.names.downcase.capitalize %></li>
+	  				<% end %>
+					</ul>
+				</div>
+			</div>
+		</li>
+		<% end %>
+		<li class="drop"><%= link_to t('.store'), store_index_path %></li>
+		<li class="drop">
+				<a href="#" class="link">You</a>
 				<div class="dropdownContain">
 					<div class="dropOut">
 						<div class="triangle"></div>

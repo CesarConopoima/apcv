@@ -5,7 +5,7 @@
 es:
  store:
   index:
-   title: "Consiga su productos"
+   title: "Consiga el producto de su marca favorita"
  layouts:
   application:
    product: "Productos"

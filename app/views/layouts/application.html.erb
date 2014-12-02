@@ -9,27 +9,29 @@
 <body class="<%= controller.controller_name %>" id = "body">
 <div id="contenido">
 	<!--here goes logging and language info-->
-	<div id="loginImg">
-		<%= image_tag("compressors/Bitzer2.jpg",class: 'comp1')%>
-		<%= image_tag("compressors/Carrier.jpg",class: 'comp1')%>
-		<%= image_tag("compressors/Copeland.jpg",class: 'comp1')%>
-	</div>
-	<div id="loginLangua">
-	<p>
-	<%= link_to_unless I18n.locale == :en, "English", locale: :en %>
-	|
-	<%= link_to_unless I18n.locale == :es, "Español", locale: :es %>
-	</p>
-	<% if user_signed_in? %>
-	  <%= t('.text1') %> <strong><%= current_user.email %></strong>||||
-	  <%= link_to t('.linkLoggin'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-	<% else %>
-	  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
-	<% end %>
-	</div>
-	<!--here goes all login partial template-->
-	<div id="loginLogin">
-	<%= render 'devise/sessions/partialnew' %>
+	<div id = "up">
+		<div id="loginImg">
+			<%= image_tag("compressors/Bitzer2.jpg",class: 'comp1')%>
+			<%= image_tag("compressors/Carrier.jpg",class: 'comp1')%>
+			<%= image_tag("compressors/Copeland.jpg",class: 'comp1')%>
+		</div>
+		<div id="loginLangua">
+			<p>
+			<%= link_to_unless I18n.locale == :en, "English", locale: :en %>
+			|
+			<%= link_to_unless I18n.locale == :es, "Español", locale: :es %>
+			</p>
+			<% if user_signed_in? %>
+			  <%= t('.text1') %> <strong><%= current_user.email %></strong>||||
+			  <%= link_to t('.linkLoggin'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+			<% else %>
+			  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+			<% end %>
+		</div>
+		<!--here goes all login partial template-->
+		<div id="loginLogin">
+			<%= render 'devise/sessions/partialnew' %>
+		</div>
 	</div>
 	<!--here sup menu to add deployed menu-->
 	<div id="navegacion">

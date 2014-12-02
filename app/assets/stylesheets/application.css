@@ -18,6 +18,10 @@
     background-size: 21000% auto, 21000% auto;
 }
 
+#up {
+  background-color: blue;
+  }
+
 .comp1 {
   width: 62px;
   margin-left: 35px;  
