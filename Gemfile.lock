@@ -124,7 +124,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
-  devise
+  devise (~> 2.2.8)
   jquery-rails
   pg
   rails (= 3.2.0)

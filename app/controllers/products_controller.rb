@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @Productos = Product.marcas
     @products = Product.all
 
     respond_to do |format|
@@ -15,6 +16,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @Productos = Product.marcas
     @product = Product.find(params[:id])
 
     respond_to do |format|
@@ -26,6 +28,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.json
   def new
+    @Productos = Product.marcas
     @product = Product.new
 
     respond_to do |format|
@@ -36,12 +39,14 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @Productos = Product.marcas
     @product = Product.find(params[:id])
   end
 
   # POST /products
   # POST /products.json
   def create
+    @Productos = Product.marcas
     @product = Product.new(params[:product])
     respond_to do |format|
       if @product.save
@@ -57,6 +62,7 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.json
   def update
+    @Productos = Product.marcas
     @product = Product.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +79,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    @Productos = Product.marcas
     @product = Product.find(params[:id])
     @product.destroy
 

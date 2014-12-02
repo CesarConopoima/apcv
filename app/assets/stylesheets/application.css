@@ -11,3 +11,93 @@
  *= require_self
  *= require_tree .
 */
+
+
+#body  {
+    background: linear-gradient(#0a2544 , white) no-repeat;
+    background-size: 21000% auto, 21000% auto;
+}
+
+.comp1 {
+  width: 62px;
+  margin-left: 35px;  
+}
+
+#loginImg {
+  position:relative;
+  display:inline;
+  float: left;
+  width:30%;
+  height: 70px;
+  margin-top:15px;
+}
+#loginLangua {
+  position:relative;
+  display:inline;
+  float: left;
+  width:20%;
+  height: 70px;
+  margin-top:15px;
+  margin-left: 10px;
+}
+#loginLogin{
+  position:relative;
+  display:inline;
+  float: left;
+  width:49%;
+  height: 70px;
+  margin-top:15px;
+  margin-left: 1px;
+}
+
+#navegacion {
+  position:relative;
+  display:inline;
+  float: left;
+  width:100%;
+  height: 50px;
+  margin-bottom:5px;
+  margin-top:5px;
+  margin-left: 5px;
+  z-index: 10;
+}
+#contenido{
+  width:87%;
+  min-width:95%;
+  position:absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: white;
+  }
+
+ #side_l{
+  position:relative;
+    float: left;
+    padding: 0;
+    width: 15%;
+    background: white;
+    z-index: 1;
+    margin-right:5px;
+}
+
+#main {
+ position:relative;
+ max-width: 80%;
+ /*min-height: 650px;*/
+ float: left;
+ width: 69%;
+ margin-right: 0px;
+ margin-left: 3px;
+ background: white;
+  z-index: 0;
+ }
+
+  #side_r {
+    position:relative;
+    float: left;
+    /*min-width: 26%;*/
+    width:15%;
+    padding: 0;
+    background: white;
+  }

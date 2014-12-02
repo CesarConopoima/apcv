@@ -30,7 +30,8 @@ gem 'rails_12factor', group: :production
 
 gem 'thin'
 
-gem 'devise'
+gem 'devise','~> 2.2.8'
+#gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

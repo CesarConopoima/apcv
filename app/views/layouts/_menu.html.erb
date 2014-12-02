@@ -1,5 +1,153 @@
-<div>
-<% @Productos.each do |producto| %>
-<h3><%= producto.marc %></h3>
-<% end %>
-</div>
+<style>
+.headermenu {
+	display:inline;
+	padding-left:50px;
+}
+p { display:block; }
+div { width: 100%; }
+
+/*Aquí es styling del dropable menu*/
+a {
+	text-decoration: none;
+}
+
+nav {
+	position: relative;
+	width: 70%;
+	height: 37px;
+	background: #222;
+}
+
+ul {
+	text-align: center;
+	color:white;
+}
+
+ul li {
+	font-size: 17px;
+  	font-family: 'Arial Black', Gadget, sans-serif;
+	/*font: 17px Arial;*/
+	cursor: pointer;
+	color:white;
+	-webkit-transition: padding .05s linear;
+	-moz-transition: padding .05s linear;
+	-ms-transition: padding .05s linear;
+	-o-transition: padding .05s linear;
+	transition: padding .05s linear;
+}
+ul li.drop {
+	position: relative;
+}
+ul > li {
+	display: inline-block;
+}
+ul li a {
+	color: #eee;
+	line-height: 30px;
+	padding: 0 50px;
+	height: 45px;
+	-webkit-transition: all .1s ease-out;
+	-moz-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	-o-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+}
+ul li a:hover {
+	color: #eee;
+}
+
+.dropOut .triangle {
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid white;
+	top: -8px;
+	left: 50%;
+	margin-left: -8px;
+}
+.dropdownContain {
+	width: 220px;
+	position: absolute;
+	z-index: 2;
+	left: 50%;
+	margin-left: -110px; /* half of width */
+	top: -400px;
+}
+.dropOut {
+	width: 220px;
+	background: white;
+	float: left;
+	position: relative;
+	margin-top: 0px;
+	opacity: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+	-moz-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+	box-shadow: 0 1px 6px rgba(0,0,0,.15);
+	-webkit-transition: all .1s ease-out;
+	-moz-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	-o-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+}
+
+.dropOut ul {
+	float: left;
+	padding: 10px 0;
+}
+.dropOut ul li {
+	text-align: left;
+	float: left;
+	width: 185px;
+	padding: 12px 0 10px 15px;
+	margin: 0px 10px;
+	color: #777;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: background .1s ease-out;
+	-moz-transition: background .1s ease-out;
+	-ms-transition: background .1s ease-out;
+	-o-transition: background .1s ease-out;
+	transition: background .1s ease-out;
+}
+
+.dropOut ul li:hover {
+	background: #e59400;
+	/*background: #f6f6f6;*/
+}
+
+ul li:hover a { color: white; background: #e59400;}
+ul li:hover .dropdownContain { top: 30px; }
+ul li:hover .underline { border-bottom-color: #777; }
+ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
+
+</style>
+
+<nav>
+		<ul>
+			<% @Productos.each do |producto| %>
+		<li class="drop"><a href="#" style="color:white;"><%= producto.marc.upcase %></a></li>
+
+		<% end %>
+		<li class="drop">
+				<a href="#" style="color:white;">You</a>
+				<div class="dropdownContain">
+					<div class="dropOut">
+						<div class="triangle"></div>
+						<ul>
+							<li>Plan</li>
+							<li>Account Settings</li>
+							<li>Switch Account</li>
+							<li>Sign Out</li>
+						</ul>
+					</div>
+				</div>
+			
+			</li>
+		</ul>
+</nav>
