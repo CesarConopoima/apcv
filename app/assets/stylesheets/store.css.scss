@@ -3,7 +3,91 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .store {
-	.entry{
-	background:orange;
-	}
+
+	.entry {
+    position:relative;
+    width: 215px;
+    min-height: 220px;
+    height: 205px;
+    float:left;
+    display:block;
+    marging-left:5px;
+    a{
+    color:#2F516D;
+    text-decoration: none;
+    }
+    a:hover{
+    color:white;
+    background: #708090 ;
+    }
+   img.zoomsl {
+      position:absolute;
+      width:80px;
+      max-height:157px;
+      margin-right:10px;
+      margin-left:20px;
+      margin-bottom:5px;
+      z-index:1;
+    }
+     div.price {
+      width:75px;
+      float:left;
+      color: #2F516D;
+      margin-right: 3em;
+      margin-left: 30px;
+    }
+    div.codigo{
+    position:absolute;
+    bottom: 10px;
+    color: #2F516D;
+    font-weight:bold;
+    font-style:italic;
+    left: 35%;
+    z-index:2;
+    }
+    h3 {
+      font-size: 100%;
+      font-family: sans-serif;
+      margin-right: 10px;
+      margin-left: 12px;
+      margin-top: 0;
+      margin-bottom: 2px;
+      color: #2F516D;
+    }
+
+    h4 {
+      font-size:80%;
+      font-family: sans-serif;
+      margin-left: 125px;
+      margin-top: 0;
+      margin-bottom: 2px;
+      color: #2F516D;
+    }
+
+    p, div.price_line {
+      font-size:82%;
+      margin-left: 100px;
+      margin-top: 0.5em; 
+      margin-bottom: 0.8em; 
+    }
+
+    input.button {
+      border:0;
+      margin-top:20px;
+      color:white;
+      background:#2F516D;
+      height:25px;
+      text-font:60%;
+      display:inline;
+    }
+    input.button:hover {
+      background:#e59400;
+    }
+
+    img.carro {
+      width: 20px;
+      height: 20px;
+    }
+
+  }
 }
