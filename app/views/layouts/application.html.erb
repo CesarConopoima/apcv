@@ -9,7 +9,6 @@
 <body class="<%= controller.controller_name %>" id = "body">
 <div id="contenido">
 	<!--here goes logging and language info-->
-	<div id = "up">
 		<div id="loginImg">
 			<%= image_tag("compressors/Bitzer2.jpg",class: 'comp1')%>
 			<%= image_tag("compressors/Carrier.jpg",class: 'comp1')%>
@@ -32,7 +31,6 @@
 		<div id="loginLogin">
 			<%= render 'devise/sessions/partialnew' %>
 		</div>
-	</div>
 	<!--here sup menu to add deployed menu-->
 	<div id="navegacion">
 		<%= render 'layouts/menu' %>
