@@ -16,10 +16,10 @@
 	<div class="entry">
 		<h3><%= producto.name %></h3>
 		<% if !producto.addedimageurl.to_s.include?('no_dispo') %>
-        <img class="zoomsl" src="<%= image_path(producto.addedimageurl) %>" 
+        <img src="<%= image_path(producto.addedimageurl) %>" 
         alt="" />
         <% else %>
-      	<img class="zoomsl" src="<%= image_path(producto.imageurl) %>" 
+      	<img src="<%= image_path(producto.imageurl) %>" 
         alt="" />
         <% end %>
 		<h4 class="price_line"><%= producto.marc %></h4>
