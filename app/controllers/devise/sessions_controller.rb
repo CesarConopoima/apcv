@@ -22,6 +22,7 @@ class Devise::SessionsController < DeviseController
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
     @products = Product.search(false)
+
     self.resource = warden.authenticate!(auth_options)
     set_flash_message(:notice, :signed_in) if is_navigational_format?
     sign_in(resource_name, resource)
@@ -30,7 +31,7 @@ class Devise::SessionsController < DeviseController
 
   # DELETE /resource/sign_out
   def destroy
-      @marcas = Product.marcas
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer

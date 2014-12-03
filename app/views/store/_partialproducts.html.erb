@@ -16,11 +16,9 @@
 	<div class="entry">
 		<h3><%= producto.name %></h3>
 		<% if !producto.addedimageurl.to_s.include?('no_dispo') %>
-        <img src="<%= image_path(producto.addedimageurl) %>" 
-        alt="" />
+        <img alt="" />
         <% else %>
-      	<img src="<%= image_path(producto.imageurl) %>" 
-        alt="" />
+      	<img alt="" />
         <% end %>
 		<h4 class="price_line"><%= producto.marc %></h4>
 		<div class="price_line">

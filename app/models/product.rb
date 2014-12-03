@@ -21,10 +21,10 @@ class Product < ActiveRecord::Base
   		find_by_sql("select marc from products group by marc")
   	end
   	def self.copeland
-  		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Copeland' and flagmis='no' group by names having count(*) > 0 order by names")
+  		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Copeland' and flagmis='no' group by names having count(*) > 5 order by names")
   	end
   	def self.carrier
-  		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Carrier' and flagmis='no' group by names having count(*) > 0 order by names")
+  		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Carrier' and flagmis='no' group by names having count(*) > 5 order by names")
   	end
   	def self.bitzer
   		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Bitzer' and flagmis='no' group by names order by names")

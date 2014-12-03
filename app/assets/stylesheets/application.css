@@ -79,7 +79,7 @@
   position:relative;
     float: left;
     padding: 0;
-    width: 15%;
+    width: 2%;
     background: white;
     z-index: 1;
     margin-right:5px;
@@ -90,7 +90,7 @@
  max-width: 80%;
  /*min-height: 650px;*/
  float: left;
- width: 69%;
+ width: 60%;
  margin-right: 0px;
  margin-left: 3px;
  background: white;
@@ -101,7 +101,7 @@
     position:relative;
     float: left;
     /*min-width: 26%;*/
-    width:15%;
+    width:35%;
     padding: 0;
     background: white;
   }
