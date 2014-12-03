@@ -20,6 +20,16 @@
     color:white;
     background: #708090 ;
     }
+   img {
+      position:absolute;
+      width:80px;
+      max-height:157px;
+      margin-right:10px;
+      margin-left:20px;
+      margin-bottom:5px;
+      z-index:1;
+    }
+    
    img.zoomsl {
       position:absolute;
       width:80px;

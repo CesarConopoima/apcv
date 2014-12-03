@@ -13,7 +13,8 @@ class Product < ActiveRecord::Base
 	     if search  
 	      where('name LIKE ? OR code LIKE ? OR marc LIKE ?',"%#{search.upcase}%","%#{search.upcase}%","%#{search.downcase.capitalize}%").limit(10)  
 	    else
-	      where('imageurl LIKE ?', "logo%").order('created_at DESC').limit(6)
+	      #where('imageurl LIKE ?', "logo%").order('created_at DESC').limit(8)
+	      where('imageurl NOT LIKE ?', "logo%").order("RANDOM()").limit(8)
 	    end  
   	end 
 

@@ -15,11 +15,7 @@
  <% @products.each do |producto| %>
 	<div class="entry">
 		<h3><%= producto.name %></h3>
-		<% if !producto.addedimageurl.to_s.include?('no_dispo') %>
-        <img alt="" />
-        <% else %>
-      	<img alt="" />
-        <% end %>
+      	<img alt="" src="<%= image_path(producto.imageurl) %>"/>
 		<h4 class="price_line"><%= producto.marc %></h4>
 		<div class="price_line">
 			<% if user_signed_in? %>
