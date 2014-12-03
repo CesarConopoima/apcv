@@ -1,13 +1,21 @@
 class Devise::ConfirmationsController < DeviseController
   # GET /resource/confirmation/new
   def new
-    @Productos = Product.marcas
+    @marcas = Product.marcas
+    @productoCop=Product.copeland
+    @productoCarr=Product.carrier
+    @productoBit=Product.bitzer
+    @products = Product.search(false)
     build_resource({})
   end
 
   # POST /resource/confirmation
   def create
-    @Productos = Product.marcas
+    @marcas = Product.marcas
+    @productoCop=Product.copeland
+    @productoCarr=Product.carrier
+    @productoBit=Product.bitzer
+    @products = Product.search(false)
     self.resource = resource_class.send_confirmation_instructions(resource_params)
 
     if successfully_sent?(resource)
@@ -19,7 +27,11 @@ class Devise::ConfirmationsController < DeviseController
 
   # GET /resource/confirmation?confirmation_token=abcdef
   def show
-    @Productos = Product.marcas
+    @marcas = Product.marcas
+    @productoCop=Product.copeland
+    @productoCarr=Product.carrier
+    @productoBit=Product.bitzer
+    @products = Product.search(false)
     self.resource = resource_class.confirm_by_token(params[:confirmation_token])
 
     if resource.errors.empty?

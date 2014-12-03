@@ -5,13 +5,21 @@ class Devise::PasswordsController < DeviseController
 
   # GET /resource/password/new
   def new
-    @Productos = Product.marcas
+    @marcas = Product.marcas
+    @productoCop=Product.copeland
+    @productoCarr=Product.carrier
+    @productoBit=Product.bitzer
+    @products = Product.search(false)
     build_resource({})
   end
 
   # POST /resource/password
   def create
-    @Productos = Product.marcas
+    @marcas = Product.marcas
+    @productoCop=Product.copeland
+    @productoCarr=Product.carrier
+    @productoBit=Product.bitzer
+    @products = Product.search(false)
     self.resource = resource_class.send_reset_password_instructions(resource_params)
 
     if successfully_sent?(resource)
@@ -23,14 +31,22 @@ class Devise::PasswordsController < DeviseController
 
   # GET /resource/password/edit?reset_password_token=abcdef
   def edit
-    @Productos = Product.marcas
+    @marcas = Product.marcas
+    @productoCop=Product.copeland
+    @productoCarr=Product.carrier
+    @productoBit=Product.bitzer
+    @products = Product.search(false)
     self.resource = resource_class.new
     resource.reset_password_token = params[:reset_password_token]
   end
 
   # PUT /resource/password
   def update
-    @Productos = Product.marcas
+    @marcas = Product.marcas
+    @productoCop=Product.copeland
+    @productoCarr=Product.carrier
+    @productoBit=Product.bitzer
+    @products = Product.search(false)
     self.resource = resource_class.reset_password_by_token(resource_params)
 
     if resource.errors.empty?

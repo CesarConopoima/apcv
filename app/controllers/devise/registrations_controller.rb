@@ -4,20 +4,22 @@ class Devise::RegistrationsController < DeviseController
 
   # GET /resource/sign_up
   def new
-  	@marcas = Product.marcas
+  	 @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @products = Product.search(false)
     resource = build_resource({})
     respond_with resource
   end
 
   # POST /resource
   def create
-  	@marcas = Product.marcas
+  	 @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @products = Product.search(false)
     build_resource
 
     if resource.save
@@ -38,10 +40,11 @@ class Devise::RegistrationsController < DeviseController
 
   # GET /resource/edit
   def edit
-  	@marcas = Product.marcas
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @products = Product.search(false)
     render :edit
   end
 
@@ -49,10 +52,11 @@ class Devise::RegistrationsController < DeviseController
   # We need to use a copy of the resource because we don't want to change
   # the current user in place.
   def update
-  	@marcas = Product.marcas
+  	 @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @products = Product.search(false)
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
 
@@ -72,10 +76,11 @@ class Devise::RegistrationsController < DeviseController
 
   # DELETE /resource
   def destroy
-  	@marcas = Product.marcas
+  	 @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @products = Product.search(false)
     resource.destroy
     Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
     set_flash_message :notice, :destroyed if is_navigational_format?
