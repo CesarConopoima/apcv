@@ -90,7 +90,7 @@
  max-width: 80%;
  /*min-height: 650px;*/
  float: left;
- width: 60%;
+ width: 70%;
  margin-right: 0px;
  margin-left: 3px;
  background: white;
@@ -101,7 +101,7 @@
     position:relative;
     float: left;
     /*min-width: 26%;*/
-    width:35%;
+    width:22%;
     padding: 0;
     background: white;
   }
