@@ -1,13 +1,4 @@
-<!--%= javascript_include_tag "zoomsl-3.0.min.js" %-->
-<script>
-	// jQuery(function(){
- //    	$(".zoomsl").imagezoomsl({
- //        	zoomrange: [4,4],
-	// 		magnifiersize: [300,300],
-	// 		magnifiereffectanimate: "fadeIn"
- //    	});
-	// });
-</script>
+
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
@@ -27,7 +18,7 @@
 			<% if user_signed_in? %>
 			<div class="price"><%= number_to_currency(producto.price, :unit=>"Bsf ") %></div>
 			<div class="price">Disponible</div>	
-		<!-- 	<%= button_to 'Agregar al Carro', line_items_path(producto_id: producto), remote: true,:class => "button" %> -->
+		<%= button_to 'Agregar al Carro' %>
 			<% else %>
 			<div class="price">Login for price</div>
 			<div class="price">Disponible</div>	
