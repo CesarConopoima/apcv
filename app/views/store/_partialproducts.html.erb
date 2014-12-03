@@ -27,7 +27,7 @@
 			<% if user_signed_in? %>
 			<div class="price"><%= number_to_currency(producto.price, :unit=>"Bsf ") %></div>
 			<div class="price">Disponible</div>	
-			<%= button_to 'Agregar al Carro'
+			<%= button_to 'Agregar al Carro'%>
 			<% else %>
 			<div class="price">Login for price</div>
 			<div class="price">Disponible</div>	
