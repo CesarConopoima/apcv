@@ -1,6 +1,7 @@
 class Devise::ConfirmationsController < DeviseController
   # GET /resource/confirmation/new
   def new
+    @cart = current_cart
     @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
@@ -11,6 +12,7 @@ class Devise::ConfirmationsController < DeviseController
 
   # POST /resource/confirmation
   def create
+    @cart = current_cart
     @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
@@ -27,6 +29,7 @@ class Devise::ConfirmationsController < DeviseController
 
   # GET /resource/confirmation?confirmation_token=abcdef
   def show
+    @cart = current_cart
     @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier

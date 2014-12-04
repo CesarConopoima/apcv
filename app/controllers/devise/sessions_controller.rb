@@ -5,7 +5,8 @@ class Devise::SessionsController < DeviseController
 
   # GET /resource/sign_in
   def new
-      @marcas = Product.marcas
+    @cart = current_cart
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
@@ -17,7 +18,8 @@ class Devise::SessionsController < DeviseController
 
   # POST /resource/sign_in
   def create
-      @marcas = Product.marcas
+    @cart = current_cart
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
@@ -31,6 +33,7 @@ class Devise::SessionsController < DeviseController
 
   # DELETE /resource/sign_out
   def destroy
+    @cart = current_cart
     @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier

@@ -10,6 +10,8 @@ Americanparts::Application.routes.draw do
     get "page/index"
     resources :products
     devise_for :users
+    resources :line_items
+    resources :carts
   end
 
 

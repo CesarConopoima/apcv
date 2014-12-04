@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  
   before_filter :set_locale
   
   # after_filter :store_location
@@ -21,6 +22,15 @@ class ApplicationController < ActionController::Base
   # def after_sign_in_path_for(resource)
   #   session[:previous_url] || root_path
   # end
+  private
+  def current_cart
+    Cart.find(session[:cart_id])
+    rescue ActiveRecord::RecordNotFound
+    cart = Cart.create
+    session[:cart_id] = cart.id
+    cart
+  end
+
   protected
   def authenticate_user!
     redirect_to root_path, notice: "You must login" unless user_signed_in?

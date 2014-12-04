@@ -46,7 +46,12 @@
 		<%= yield %>
 	</div>
 	<div id="side_r">
-		Here shopping cart Johanna what do u say about what to put it here?!
+		<div id="cart">
+			<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+				<%= render @cart %>
+			<% end %>
+			<!--%= render 'carts/cart' %-->
+		</div>
 	</div>
 </div>
 </body>

@@ -5,6 +5,7 @@ class Devise::PasswordsController < DeviseController
 
   # GET /resource/password/new
   def new
+    @cart = current_cart
     @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
@@ -15,6 +16,7 @@ class Devise::PasswordsController < DeviseController
 
   # POST /resource/password
   def create
+    @cart = current_cart
     @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
@@ -31,6 +33,7 @@ class Devise::PasswordsController < DeviseController
 
   # GET /resource/password/edit?reset_password_token=abcdef
   def edit
+    @cart = current_cart
     @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
@@ -42,6 +45,7 @@ class Devise::PasswordsController < DeviseController
 
   # PUT /resource/password
   def update
+    @cart = current_cart
     @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier

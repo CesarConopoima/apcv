@@ -6,5 +6,6 @@ class StoreController < ApplicationController
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
     @products = Product.search(false)
+    @cart = current_cart
   end
 end
