@@ -15,20 +15,22 @@
 			<%= image_tag("compressors/Copeland.jpg",class: 'comp1')%>
 		</div>
 		<div id="loginLangua">
-			<p>
-			<%= link_to_unless I18n.locale == :en, "English", locale: :en %>
-			|
-			<%= link_to_unless I18n.locale == :es, "Español", locale: :es %>
-			</p>
-			<% if user_signed_in? %>
-			  <%= t('.text1') %> <strong><%= current_user.email %></strong>||||
-			  <%= link_to t('.linkLoggin'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-			<% else %>
-			<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
-			<% end %>
+			here Search Bar
 		</div>
 		<!--here goes all login partial template-->
 		<div id="loginLogin">
+			<% if user_signed_in? %>
+			  <%= t('.text1') %> <strong><%= current_user.email %></strong>|
+			  <%= link_to t('.linkLoggin'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+			<% else %>
+			<p>
+			<%= link_to "Create an account", new_user_registration_path, :class => 'navbar-link'  %>
+			<% end %>
+			<span style ="float:right;padding-right:100px;">
+			<%= link_to_unless I18n.locale == :en, "English", locale: :en %>&nbsp &nbsp
+			<%= link_to_unless I18n.locale == :es, "Español", locale: :es %>
+			</span>
+			</p>
 			<%= render 'devise/sessions/partialnew' %>
 		</div>
 	<!--here sup menu to add deployed menu-->
