@@ -11,7 +11,7 @@ es:
    product: "Productos"
    text1: "Entró como "
    linkLoggin: "Salir"
-   store: "Tienda"
+   store: "TIENDA"
  products:
   index:
    title: "Lista de productos"

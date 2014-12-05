@@ -1,10 +1,22 @@
-<h2>Your Pragmatic Cart</h2>
+<h2 class = "header">
+<i class="fa fa-shopping-cart" id="carticon"></i>&nbsp &nbsp
+	Your shopping cart
+</h2>
 <table>
+	<% if cart.line_items.count > 0  %>
 	<%= render(cart.line_items) %>
+	<% else %>
+	<tr>
+	  <td class = "quantity"></td>
+	  <td class = "product"></td>
+	  <td class="item_price"></td>
+ 	</tr>
+ 	<% end %>
 	<tr class="total_line">
 	<td colspan="2">Total</td>
 	<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
 	</tr>
 </table>
-
-<%= button_to 'Empty cart', cart, method: :delete,remote: true %>
+<%= button_to 'Continue to purchase', :class => 'purchase' %>
+<!-- Erasin this method to evoid empting the cart -->
+<!--%= button_to 'Empty cart', cart, method: :delete,remote: true %-->

@@ -15,15 +15,16 @@
 			<%= image_tag("compressors/Copeland.jpg",class: 'comp1')%>
 		</div>
 		<div id="loginLangua">
-			here Search Bar
+			<p>here Search Bar</p>
 		</div>
 		<!--here goes all login partial template-->
 		<div id="loginLogin">
+			<p>
+			<span style ="padding-left:15px;">
 			<% if user_signed_in? %>
-			  <%= t('.text1') %> <strong><%= current_user.email %></strong>|
+			  <%= t('.text1') %> <strong> <%= current_user.email %> </strong>|
 			  <%= link_to t('.linkLoggin'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 			<% else %>
-			<p>
 			<%= link_to "Create an account", new_user_registration_path, :class => 'navbar-link'  %>
 			<% end %>
 			<span style ="float:right;padding-right:100px;">
@@ -38,7 +39,7 @@
 		<%= render 'layouts/menu' %>
 	</div>
 	<!-- heres goes all main body of the web page -->
-	<div id="side_l">
+	<div id="side_l" style="color:white">
 		xleft
 	</div>
 	<!--Aquí la parte cuerpo de la pag-->
@@ -49,9 +50,7 @@
 	</div>
 	<div id="side_r">
 		<div id="cart">
-			<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-				<%= render @cart %>
-			<% end %>
+			<%= render @cart %>
 			<!--%= render 'carts/cart' %-->
 		</div>
 	</div>

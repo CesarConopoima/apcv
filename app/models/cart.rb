@@ -26,4 +26,10 @@ class Cart < ActiveRecord::Base
 	def total_price
 		line_items.to_a.sum { |item| item.total_price }
 	end
+	
+	def erase(line_item_id)
+		current_item = line_items.find(line_item_id)
+		current_item.destroy
+		current_item
+  	end
 end

@@ -8,11 +8,11 @@
 
 .header {
 	color:black;
-	text-align: center;
-	width:100%;
+	text-aling:center;
 	}
 
 .header:hover{
+	font-size:1.55em;
 	background:#286e28;
 	border-radius:5px;
 	color:white;
@@ -20,20 +20,16 @@
 	font-size:1.5em;
 	color:white;
 	}
-}
+
+}	
+
+	.cart_title {
+	font: 120% bold;
+	}
 	.item_price, .total_line {
 	text-align: right;
 	}
 	.total_line .total_cell {
 	font-weight: bold;
 	border-top: 1px solid #595;
-	}
-
-input[type=submit].purchase {
-	background: blue;
-	width: 100%;
-}
-	.erase {
-	font-size:1.15em;
-	color:#7b0000;
 	}

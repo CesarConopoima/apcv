@@ -10,38 +10,42 @@
   /*	line-height:130%;*/
 	/*margin-top: 25px;}*/
 	}
-/*h3 {font-size: 15px;
+/*h3 {
+	font-size: 15px;
  	font-family: ‘Arial Black’, Gadget, sans-serif;
   	color: white;
   	background:#0a2544;
   	height:20px;
   	line-height:130%;
 	margin-top: 15px;}*/
+
+
 div.labels{
 	text-align: center;
 	font-size: 12px;
 	font-family: ‘Arial Black’, Gadget, sans-serif;
 }
-input[type=submit] {
+
+.singin {
     border: 0;
-    margin-top: 5px;
-	color:white;
+    margin-top: 10px;
+    margin-left: 10px;
+	  color:white;
     background:#e59400;
     height:25px;
     width: 100px;
 }
- input[type=submit]:hover {
-    margin-top: 5px;
-    background:#e59400;
+ .singin:hover {
+    background:#e55c00;
     height:25px;
     }
   input[type=email] {
-    margin-left:35px; 
+    margin-left:10px;
     width:100px;
     display: inline;
   }
   input[type=password]{
-    margin-left:5px; 
+    margin-left:10px; 
     width:100px;
     display: inline;
   }
@@ -52,5 +56,8 @@ a:hover{
 	background: #708090;
 }
 div .login{
-  background: white;
+  background: #e5e7e8;
+}
+.email{
+	padding-left:5px;
 }

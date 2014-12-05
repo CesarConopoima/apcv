@@ -18,7 +18,7 @@ en:
    product: "Products"
    text1: "Logged in as "
    linkLoggin: "Logout"
-   store: "Store"
+   store: "STORE"
 #Traduccion para resourse products
  products:
   index:

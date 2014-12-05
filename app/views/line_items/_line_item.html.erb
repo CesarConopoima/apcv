@@ -3,7 +3,8 @@
 <% else %>
 <tr>
 <% end %>
-	  <td><%= line_item.quantity %> </td>
-	  <td><%= line_item.product.name %></td>
-	  <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
-  </tr>
+	  <td class = "quantity"><%= line_item.quantity %> </td>
+	  <td class = "product"><%= line_item.product.name %></td>
+	  <td class ="item_price"><%= number_to_currency(line_item.total_price) %></td>
+	  <td class = "erase"><%= link_to raw("<i class=\"fa fa-times\"></i>"), erase_line_item_path(line_item), :method => :put, remote: true, :class => 'erase' %></td>
+ </tr>

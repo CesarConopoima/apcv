@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require font-awesome
 */
 
 
@@ -18,40 +19,44 @@
     background-size: 21000% auto, 21000% auto;
 }
 
-#up {
-  background-color: blue;
-  }
-
 .comp1 {
   width: 62px;
   margin-left: 35px;  
+  border-radius: 100px;
+  margin-top: 20px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
 }
 
 #loginImg {
   position:relative;
   display:inline;
   float: left;
-  width:30%;
-  height: 70px;
-  margin-top:15px;
+  width:25%;
+  height: 110px;
+  background: white;
 }
+
 #loginLangua {
   position:relative;
   display:inline;
   float: left;
-  width:20%;
-  height: 70px;
-  margin-top:15px;
-  margin-left: 10px;
+  width:30%;
+  height: 110px;
+  background: white;
+  color:black;
 }
 #loginLogin{
   position:relative;
   display:inline;
   float: left;
-  width:49%;
-  height: 70px;
-  margin-top:15px;
-  margin-left: 1px;
+  width:45%;
+  height: 110px;
+  background: #e5e7e8;
+}
+
+div .login{
+ background: #0e1319;
 }
 
 #navegacion {
@@ -61,7 +66,6 @@
   width:100%;
   height: 50px;
   margin-bottom:5px;
-  margin-top:5px;
   margin-left: 5px;
   z-index: 10;
 }
@@ -82,7 +86,6 @@
     width: 2%;
     background: white;
     z-index: 1;
-    margin-right:5px;
 }
 
 #main {
@@ -92,7 +95,6 @@
  float: left;
  width: 70%;
  margin-right: 0px;
- margin-left: 3px;
  background: white;
   z-index: 0;
  }
@@ -101,7 +103,18 @@
     position:relative;
     float: left;
     /*min-width: 26%;*/
-    width:22%;
+    width:28%;
     padding: 0;
     background: white;
   }
+
+  /*this tab is to define width of table of items*/
+  .quantity{
+    width:5%;
+  }
+  .product{
+    width:80%;
+  }
+
+
+ 
