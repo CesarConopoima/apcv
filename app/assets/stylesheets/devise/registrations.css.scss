@@ -2,6 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 h2 {
-	color:blue;
+	color:black;
+}
+.form {
+	width: 250px;
+	margin-left: 300px;
+}
+.email {
+	width:400px;
+}
+.createuser {
+	text-aling:center;
+}
+.field {
+	text-align:center;
+}
+.button {
+	height: 30px;
+	width: 200px;
+	background:#286e28;
+	border-radius: 5px;
+	color:white;
+}
+
+.button:hover {
+	height: 30px;
+	width: 200px;
+	background: #689968;
+	border-radius: 5px;
 }

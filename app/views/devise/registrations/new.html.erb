@@ -1,32 +1,49 @@
-<h2>Sign up</h2>
-
+<h2><i class="fa fa-user"></i> Create a user account</h2>
+<div class = "createuser">
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-<h3>Your personal information</h3>
-  <div><%= f.label :email %>
-  <%= f.email_field :email, :autofocus => true %></div>
+<h3> <i class="fa fa-info"></i> Your personal information</h3>
+  
+  <table>
+      <tr>
+        <td style ="width:250px;"><%= f.label :email %></td>
+        <td><%= f.email_field :email, :autofocus => true %></td>
+      </tr>
+      <tr>
+        <td style ="width:250px;"><%= f.label :username %></td>
+        <td><%= f.email_field :username %></td>
+      </tr>
+  </table>
 
-  <div><%= f.label :username %>
-  <%= f.email_field :username %></div>
-
-<h3>Contac information</h3>
-  <div><%= f.label :company_name %>
-  <%= f.email_field :companyname %></div>
-
-  <div><%= f.label :telephone %>
-  <%= f.email_field :telephone %></div>
-
-  <div><%= f.label :fax %>
-  <%= f.email_field :fax %></div>
-
-<h3>Security information</h3>
-  <div><%= f.label :password %>
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Create Acount" %></div>
+<h3> <i class="fa fa-info"></i> Contac information</h3>
+  <table>
+    <tr>
+      <td style ="width:250px;"><%= f.label :company_name %></td>
+      <td><%= f.email_field :companyname %></td>
+    </tr>
+    <tr>
+      <td style ="width:250px;"><%= f.label :telephone %></td>
+      <td><%= f.email_field :telephone %></td>
+    </tr>
+     <tr>
+      <td style ="width:250px;"><%= f.label :fax %></td>
+      <td><%= f.email_field :fax %></td>
+    </tr>
+  </table>
+    
+<h3> <i class="fa fa-info"></i> Security information</h3>
+  <table>
+    <tr>
+      <td style ="width:250px;"><%= f.label :password %></td>
+      <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td style ="width:250px;"><%= f.label :password_confirmation %></td>
+      <td><%= f.password_field :password_confirmation %></td>
+    </tr>
+  </table>
+<div><%= f.submit "Create Acount", :class => "button" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

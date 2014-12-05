@@ -7,9 +7,9 @@
 	<%= render(cart.line_items) %>
 	<% else %>
 	<tr>
-	  <td>w</td>
-	  <td>w</td>
-	  <td class="item_price">w</td>
+	  <td class = "quantity"></td>
+	  <td class = "product"></td>
+	  <td class="item_price"></td>
  	</tr>
  	<% end %>
 	<tr class="total_line">
@@ -17,5 +17,4 @@
 	<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
 	</tr>
 </table>
-
-<%= button_to 'Empty cart', cart, method: :delete,remote: true %>
+<%= button_to 'Continue to purchase', :class => 'purchase' %>
