@@ -12,7 +12,9 @@ Americanparts::Application.routes.draw do
     devise_for :users
     resources :line_items
     resources :carts
+    resources :orders
   end
+  
   resources :line_items do
     put 'erase', on: :member
   end

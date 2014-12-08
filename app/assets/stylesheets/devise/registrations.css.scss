@@ -6,13 +6,6 @@
 h2 {
 	color:black;
 }
-.form {
-	width: 250px;
-	margin-left: 300px;
-}
-.email {
-	width:400px;
-}
 .createuser {
 	text-aling:center;
 }
@@ -26,10 +19,12 @@ h2 {
 	border-radius: 5px;
 	color:white;
 }
-
 .button:hover {
 	height: 30px;
 	width: 200px;
 	background: #689968;
 	border-radius: 5px;
+}
+.fieldForm {
+	width:250px;
 }

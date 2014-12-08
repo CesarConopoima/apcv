@@ -8,11 +8,11 @@
 
 .header {
 	color:black;
-	text-aling:center;
+	text-align: center;
+	width:100%;
 	}
 
 .header:hover{
-	font-size:1.55em;
 	background:#286e28;
 	border-radius:5px;
 	color:white;
@@ -20,12 +20,7 @@
 	font-size:1.5em;
 	color:white;
 	}
-
-}	
-
-	.cart_title {
-	font: 120% bold;
-	}
+}
 	.item_price, .total_line {
 	text-align: right;
 	}
@@ -33,3 +28,25 @@
 	font-weight: bold;
 	border-top: 1px solid #595;
 	}
+	.erase {
+	font-size:1.15em;
+	color:#7b0000;
+	}
+
+.purchase input[type=submit] {
+	color: white;
+	height: 30px;
+	border-radius: 7px;
+	background: #286e28;
+	text-aling:center;
+	width: 90%;
+}
+
+.purchase input[type=submit]:hover {
+	color: white;
+	height: 30px;
+	border-radius: 7px;
+	background: #4c924c;
+	text-aling:center;
+	width: 90%;
+}

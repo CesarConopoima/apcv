@@ -17,4 +17,8 @@
 	<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
 	</tr>
 </table>
-<%= button_to 'Continue to purchase', :class => 'purchase' %>
+<% if user_signed_in? and cart.line_items.empty? %>
+<span class="purchase">
+<%= button_to 'Continue to purchase', new_order_path, method: :get %>
+</span>
+<% end %>

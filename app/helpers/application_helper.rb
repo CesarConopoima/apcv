@@ -11,10 +11,4 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-  def hidden_div_if(condition, attributes = {}, &block)
-		if condition
-			attributes["style"] = "display: none"
-		end
-		content_tag("div", attributes, &block)
-	end
 end

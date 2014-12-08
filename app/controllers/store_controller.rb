@@ -5,7 +5,7 @@ class StoreController < ApplicationController
   	@productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
-    @products = Product.search(false)
+    @products = Product.search(params[:search])
     @cart = current_cart
   end
 end

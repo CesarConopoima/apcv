@@ -97,6 +97,7 @@ div .login{
  margin-right: 0px;
  background: white;
   z-index: 0;
+  min-height: 700px;
  }
 
   #side_r {
@@ -116,5 +117,14 @@ div .login{
     width:80%;
   }
 
-
- 
+.searchBar {
+  height:20px;
+  width:300px;
+}
+.searchBotton {
+  color:white;
+  width:95px;
+  height: 25px;
+  border:none;
+  background:#e59400;
+}

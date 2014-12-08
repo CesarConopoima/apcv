@@ -14,12 +14,21 @@ class Product < ActiveRecord::Base
 	
 	def self.search(search)  
 	     if search  
-	      where('name LIKE ? OR code LIKE ? OR marc LIKE ?',"%#{search.upcase}%","%#{search.upcase}%","%#{search.downcase.capitalize}%").limit(10)  
+	     	if search.include?("copeland") or search.include?("Copeland") 
+	     		@product = search.gsub("copeland","").gsub("Copeland","")
+	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}%","Copeland",)  
+	     	elsif search.include?("carrier") or search.include?("Carrier")
+	     		@product = search.gsub("carrier","").gsub("Carrier","")
+	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}%","Carrier",)  
+	     	else
+	     	where('name LIKE ? OR code LIKE ?',"%#{search.upcase}%","%#{search.upcase}%").limit(8)  
+	   		end
 	    else
 	      #where('imageurl LIKE ?', "logo%").order('created_at DESC').limit(8)
 	      where('imageurl NOT LIKE ?', "logo%").order("RANDOM()").limit(8)
 	    end  
   	end 
+
 
 	def self.marcas
   		find_by_sql("select marc from products group by marc")
