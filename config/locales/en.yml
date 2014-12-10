@@ -30,6 +30,10 @@ en:
     personal: 'Your personal information'
     contac: 'Contac information'
     security: 'Security information'
+  shared:
+   links:
+    forgot: 'Forgot your password?'
+    confirmation: 'Didn''t receive confirmation instructions?'
  store:
   index:
    title: "Select the product of your favority brand"
