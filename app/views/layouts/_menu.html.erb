@@ -133,8 +133,11 @@ ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
 	color: white;
 }
 </style>
+
 <nav>
 		<ul class="dropable">
+		<li class="drop"><%= link_to t('.HOME'), store_home_path %></li>
+		<li class="drop"><%= link_to t('.STORE'), store_index_path %></li>
 			<% @marcas.each do |producto| %>
 		<li class="drop">
 			<a href="#" class="link"><%= producto.marc.upcase %></a>
@@ -157,7 +160,7 @@ ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
 			</div>
 		</li>
 		<% end %>
-		<li class="drop"><%= link_to t('.STORE'), store_index_path %></li>
+		
 		<!-- <li class="drop">
 				<a href="#" class="link">You</a>
 				<div class="dropdownContain">

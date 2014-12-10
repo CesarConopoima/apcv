@@ -3,15 +3,56 @@
 # ruby encoding: utf-8
 
 es:
+ helpers:
+  label:
+   user:
+    email: 'Email'
+    username: 'Nombre de usuario'
+    password: 'Contraseña'
+    remember_me: 'Recuerdame'
+    company_name: 'Nombre de la compañia'
+    telephone: 'Teléfono'
+    fax: 'Fax'
+    password_confirmation: 'Confirmar la contraseña'
+  submit:
+   user:
+    create: "Crear cuenta"
+ devise:
+  registrations:
+   new:
+    title: 'Crear una cuenta'
+    personal: 'Información personal'
+    contac: 'Información de contacto'
+    security: 'Información de seguridad'
  store:
   index:
    title: "Consiga el producto de su marca favorita"
+  home:
+   title: "Nuestro negocio son los repuestos de compresores"
+   subtitle: "Encuentre los repuestos de sus marcas favoritas"
+   text1: "Todos nuestros productos para vender alrededor del mundo"
+   text2: "Le brindamos a nuestros clientes partes compresores de alta calidad"
+  partialproducts:
+   add:"Agregar al carro"
+ carts:
+  cart:
+   title: 'Tu carro de compras'
+ users:
+  carts:
+   cart:
+    title: 'Tu carro de compras'
  layouts:
   application:
    product: "Productos"
    text1: "Entró como "
    linkLoggin: "Salir"
-   store: "TIENDA"
+   linkCreate: "Crear una cuenta"
+   STORE: "TIENDA"
+   search: "Consigue nuestro productos"
+   searchsubmit: "Buscar"
+  menu:
+   STORE: "TIENDA"
+   HOME: "INICIO"
  products:
   index:
    title: "Lista de productos"

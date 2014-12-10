@@ -16,10 +16,10 @@
 		</div>
 		<div id="loginLangua">
 		<%= form_tag store_index_path, :method => 'get', :id => "productos_search" do %>
-	    	<h2 class="searhTitle"><i class="fa fa-search"></i> Search our products</h2>
+	    	<h2 class="searhTitle"><i class="fa fa-search"></i> &nbsp <%= t('.search') %></h2>
 	    	<p>  
 	    	<%= text_field_tag :search, params[:search], :class => "searchBar" %>  
-	    	<%= submit_tag "Search", :name => nil, :class => "searchBotton" %>  
+	    	<%= submit_tag t('.searchsubmit'), :name => nil, :class => "searchBotton" %>  
 	    	</p>  
 	    <% end %> 
 		</div>
@@ -31,7 +31,7 @@
 			  <%= t('.text1') %> <strong> <%= current_user.email %> </strong>|
 			  <%= link_to t('.linkLoggin'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 			<% else %>
-			<%= link_to "Create an account", new_user_registration_path, :class => 'navbar-link'  %>
+			<%= link_to t('.linkCreate'), new_user_registration_path, :class => 'navbar-link'  %>
 			<% end %>
 			<span style ="float:right;padding-right:100px;">
 			<%= link_to_unless I18n.locale == :en, "English", locale: :en %>&nbsp &nbsp

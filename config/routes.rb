@@ -7,6 +7,7 @@ Americanparts::Application.routes.draw do
   scope "(:locale)", :locale => /en|es/ do
     root :to => 'store#index'
     get "store/index"
+    get "store/home"
     get "page/index"
     resources :products
     devise_for :users

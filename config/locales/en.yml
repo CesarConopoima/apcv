@@ -9,16 +9,57 @@
 #   hello: "Hello world"
 
 en:
+ helpers:
+  label:
+   user:
+    email: 'Email'
+    username: 'Username'
+    password: 'Password'
+    remember_me: 'Remember me'
+    company_name: 'Company name'
+    telephone: 'Telephone'
+    fax: 'Fax'
+    password_confirmation: 'Password confirmation'
+  submit:
+   user:
+    create: "Create account"
+ devise:
+  registrations:
+   new:
+    title: 'Create a user account'
+    personal: 'Your personal information'
+    contac: 'Contac information'
+    security: 'Security information'
  store:
   index:
    title: "Select the product of your favority brand"
+  home:
+   title: "Our bussines are compressors parts"
+   subtitle: "Find the producs of your favorite brands"
+   text1: "All ours products to sell around the world"
+   text2: "We serve our clients whit high quality compressors parts"
+  partialproducts:
+   add:"Add to cart"
+ carts:
+  cart:
+   title: 'Your shopping cart'
+ users:
+  carts:
+   cart:
+    title: 'Your shopping cart'
 #Traduccion para layout
  layouts:
   application:
    product: "Products"
    text1: "Logged in as "
    linkLoggin: "Logout"
-   store: "STORE"
+   linkCreate: "Create an account"
+   STORE: "STORE"
+   search: "Search our products"
+   searchsubmit: "Search"
+  menu:
+   STORE: "STORE"
+   HOME: "HOME"
 #Traduccion para resourse products
  products:
   index:
