@@ -43,6 +43,10 @@ class Product < ActiveRecord::Base
   		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Bitzer' and flagmis='no' group by names order by names")
   	end
 
+  	def self.detailproduct(name,brand)
+  		find_by_sql("select * from products where name like '#{@name}%' and marc like '#{@brand}' ")
+  	end
+
  	 	
 private
 
