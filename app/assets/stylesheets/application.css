@@ -20,9 +20,10 @@
 }
 
 .comp1 {
-  width: 62px;
-  margin-left: 35px;  
-  border-radius: 100px;
+  width: 72px;
+  margin-left: 75px;  
+  margin-top: 25px;  
+  border-radius: 110px;
   margin-top: 20px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
@@ -69,8 +70,8 @@ div .login{
   z-index: 10;
 }
 #contenido{
-  width:87%;
-  min-width:95%;
+  min-width:1350px;
+  width:90%;
   position:absolute;
   left: 0;
   right: 0;
@@ -90,6 +91,7 @@ div .login{
 #main {
  position:relative;
  max-width: 80%;
+ min-width: 900px;
  /*min-height: 650px;*/
  float: left;
  width: 70%;
@@ -104,6 +106,7 @@ div .login{
     float: left;
     /*min-width: 26%;*/
     width:28%;
+    min-width: 300px;
     padding: 0;
     background: white;
   }

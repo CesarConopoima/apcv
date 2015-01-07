@@ -10,9 +10,7 @@
 <div id="contenido">
 	<!--here goes logging and language info-->
 		<div id="loginImg">
-			<%= image_tag("compressors/Bitzer2.jpg",class: 'comp1')%>
-			<%= image_tag("compressors/Carrier.jpg",class: 'comp1')%>
-			<%= image_tag("compressors/Copeland.jpg",class: 'comp1')%>
+			Aquí img del Logo
 		</div>
 		<div id="loginLangua">
 		<%= form_tag store_index_path, :method => 'get', :id => "productos_search" do %>
@@ -59,6 +57,10 @@
 			<%= render @cart %>
 			<!--%= render 'carts/cart' %-->
 		</div>
+		<%= image_tag("compressors/Bitzer2.jpg",class: 'comp1')%>
+		<%= image_tag("compressors/Carrier.jpg",class: 'comp1')%> <br>
+		<%= image_tag("compressors/Copeland.jpg",class: 'comp1')%>
+		<%= image_tag("compressors/Bitzer2.jpg",class: 'comp1')%>
 	</div>
 </div>
 </body>
