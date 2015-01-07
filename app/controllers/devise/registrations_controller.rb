@@ -8,6 +8,8 @@ class Devise::RegistrationsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     @cart = current_cart
     resource = build_resource({})
@@ -20,6 +22,8 @@ class Devise::RegistrationsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     @cart = current_cart
     build_resource
@@ -46,6 +50,8 @@ class Devise::RegistrationsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     @cart = current_cart
     render :edit
@@ -59,6 +65,8 @@ class Devise::RegistrationsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     @cart = current_cart
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
@@ -84,6 +92,8 @@ class Devise::RegistrationsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     @cart = current_cart
     resource.destroy

@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @marcas = Product.marcas
     @products = Product.all
 
@@ -22,6 +24,8 @@ class ProductsController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @marcas = Product.marcas
     @product = Product.find(params[:id])
 
@@ -37,6 +41,8 @@ class ProductsController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @marcas = Product.marcas
     @product = Product.new
 
@@ -51,6 +57,8 @@ class ProductsController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @marcas = Product.marcas
     @product = Product.find(params[:id])
   end
@@ -61,6 +69,8 @@ class ProductsController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @marcas = Product.marcas
     @product = Product.new(params[:product])
     respond_to do |format|
@@ -80,6 +90,8 @@ class ProductsController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @marcas = Product.marcas
     @product = Product.find(params[:id])
 
@@ -100,6 +112,8 @@ class ProductsController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @marcas = Product.marcas
     @product = Product.find(params[:id])
     @product.destroy

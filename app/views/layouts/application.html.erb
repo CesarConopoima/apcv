@@ -13,13 +13,13 @@
 			Aquí img del Logo
 		</div>
 		<div id="loginLangua">
-		<%= form_tag store_index_path, :method => 'get', :id => "productos_search" do %>
+	<!-- 	<%= form_tag store_index_path, :method => 'get', :id => "productos_search" do %>
 	    	<h2 class="searhTitle"><i class="fa fa-search"></i> &nbsp <%= t('.search') %></h2>
 	    	<p>  
 	    	<%= text_field_tag :search, params[:search], :class => "searchBar" %>  
 	    	<%= submit_tag t('.searchsubmit'), :name => nil, :class => "searchBotton" %>  
 	    	</p>  
-	    <% end %> 
+	    <% end %>  -->
 		</div>
 		<!--here goes all login partial template-->
 		<div id="loginLogin">
@@ -55,7 +55,6 @@
 	<div id="side_r">
 		<div id="cart">
 			<%= render @cart %>
-			<!--%= render 'carts/cart' %-->
 		</div>
 		<%= image_tag("compressors/Bitzer2.jpg",class: 'comp1')%>
 		<%= image_tag("compressors/Carrier.jpg",class: 'comp1')%> <br>

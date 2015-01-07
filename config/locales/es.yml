@@ -31,6 +31,8 @@ es:
  store:
   index:
    title: "Consiga el producto de su marca favorita"
+   searchsubmit: "Buscar"
+   search: "Consigue nuestro productos"
   home:
    title: "Nuestro negocio son los repuestos de compresores"
    subtitle: "Encuentre los repuestos de sus marcas favoritas"
@@ -38,6 +40,8 @@ es:
    text2: "Le brindamos a nuestros clientes partes compresores de alta calidad"
   partialproducts:
    add:"Agregar al carro"
+  productslist:
+   title: "Productos"
  carts:
   cart:
    title: 'Tu carro de compras'
@@ -53,10 +57,10 @@ es:
    linkCreate: "Crear una cuenta"
    STORE: "TIENDA"
    search: "Consigue nuestro productos"
-   searchsubmit: "Buscar"
   menu:
    STORE: "TIENDA"
    HOME: "INICIO"
+   CONTACT: "CONTACTO"
  products:
   index:
    title: "Lista de productos"

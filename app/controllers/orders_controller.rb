@@ -8,6 +8,8 @@ class OrdersController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(params[:search])
     @cart = current_cart
 
@@ -26,6 +28,8 @@ class OrdersController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(params[:search])
     @cart = current_cart
 
@@ -42,6 +46,8 @@ class OrdersController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(params[:search])
     @order = Order.new
 
@@ -64,6 +70,8 @@ class OrdersController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(params[:search])
     @cart = current_cart
   end
@@ -75,6 +83,8 @@ class OrdersController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(params[:search])
     @cart = current_cart
 
@@ -102,6 +112,8 @@ class OrdersController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(params[:search])
     @cart = current_cart
 
@@ -125,6 +137,8 @@ class OrdersController < ApplicationController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(params[:search])
     @cart = current_cart
 

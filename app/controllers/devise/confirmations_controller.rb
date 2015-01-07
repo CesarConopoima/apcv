@@ -6,6 +6,8 @@ class Devise::ConfirmationsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     build_resource({})
   end
@@ -17,6 +19,8 @@ class Devise::ConfirmationsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     self.resource = resource_class.send_confirmation_instructions(resource_params)
 
@@ -34,6 +38,8 @@ class Devise::ConfirmationsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     self.resource = resource_class.confirm_by_token(params[:confirmation_token])
 

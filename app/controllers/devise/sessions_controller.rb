@@ -10,6 +10,8 @@ class Devise::SessionsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     self.resource = build_resource(nil, :unsafe => true)
     clean_up_passwords(resource)
@@ -23,6 +25,8 @@ class Devise::SessionsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
 
     self.resource = warden.authenticate!(auth_options)
@@ -38,6 +42,8 @@ class Devise::SessionsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     redirect_path = after_sign_out_path_for(resource_name)
     signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))

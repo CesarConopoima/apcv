@@ -37,6 +37,8 @@ en:
  store:
   index:
    title: "Select the product of your favority brand"
+   searchsubmit: "Search" 
+   search: "Search our products"
   home:
    title: "Our bussines are compressors parts"
    subtitle: "Find the producs of your favorite brands"
@@ -44,6 +46,8 @@ en:
    text2: "We serve our clients whit high quality compressors parts"
   partialproducts:
    add:"Add to cart"
+  productslist:
+   title: "Products"
  carts:
   cart:
    title: 'Your shopping cart'
@@ -59,11 +63,10 @@ en:
    linkLoggin: "Logout"
    linkCreate: "Create an account"
    STORE: "STORE"
-   search: "Search our products"
-   searchsubmit: "Search"
   menu:
    STORE: "STORE"
    HOME: "HOME"
+   CONTACT: "CONTACT"
 #Traduccion para resourse products
  products:
   index:

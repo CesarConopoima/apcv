@@ -31,7 +31,7 @@ class Product < ActiveRecord::Base
 
 
 	def self.marcas
-  		find_by_sql("select marc from products group by marc")
+  		find_by_sql("select marc from products group by marc order by marc")
   	end
   	def self.copeland
   		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Copeland' and flagmis='no' group by names having count(*) > 1 order by names")
@@ -42,9 +42,18 @@ class Product < ActiveRecord::Base
   	def self.bitzer
   		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Bitzer' and flagmis='no' group by names order by names")
   	end
+  	def self.trane
+  		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Trane' and flagmis='no' group by names order by names")
+  	end
+  	def self.york
+  		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'York' and flagmis='no' group by names order by names")
+  	end
 
   	def self.detailproduct(name,brand)
   		find_by_sql("select * from products where name like '#{@name}%' and marc like '#{@brand}' ")
+  	end
+  	def self.detailproductlist(brand)
+  		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc ='#{brand}' group by names order by names")
   	end
 
  	 	

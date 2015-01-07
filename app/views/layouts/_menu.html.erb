@@ -43,7 +43,7 @@ ul > li {
 ul li a {
 	color: #eee;
 	line-height: 40px;
-	padding: 0 50px;
+	padding: 0 37px;
 	height: 45px;
 	-webkit-transition: all .1s ease-out;
 	-moz-transition: all .1s ease-out;
@@ -147,9 +147,10 @@ ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
 	<ul class="dropable">
 	<li class="drop"><%= link_to t('.HOME'), store_home_path, :class => "topmenu" %></li>
 	<li class="drop"><%= link_to t('.STORE'), store_index_path, :class =>  "topmenu" %></li>
+	<li class="drop"><%= link_to t('.CONTACT'), store_index_path, :class =>  "topmenu" %></li>
 			<% @marcas.each do |producto| %>
 		<li class="drop">
-			<a href="#" class="topmenu"><%= producto.marc.upcase %></a>
+			<%= link_to producto.marc.upcase, store_productslist_path(:marca => producto.marc), :class => "topmenu" %>
 			<div class="dropdownContain">
 				<div class="dropOut">
 					<div class="triangle"></div>
@@ -160,6 +161,10 @@ ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
 			  		<% @Busqueda = @productoCarr %>
 			  		<% elsif "#{producto.marc}" == 'Bitzer' %>
 			  		<% @Busqueda = @productoBit %>
+			  		<% elsif "#{producto.marc}" == 'Trane' %>
+			  		<% @Busqueda = @productoTra %>
+			  		<% elsif "#{producto.marc}" == 'York' %>
+			  		<% @Busqueda = @productoYork %>
 			  		<% end %>
 			  		<% @Busqueda.each do |producto1| %>
 			  		<li>

@@ -1,0 +1,20 @@
+<script>
+	// jQuery(function(){
+ //    	$(".zoomsl").imagezoomsl({
+ //        	zoomrange: [4,4],
+	// 		magnifiersize: [300,300],
+	// 		magnifiereffectanimate: "fadeIn"
+ //    	});
+	// });
+	function cambiarcantidad(objeto) {
+		var product_id = $(objeto).attr('id').split("agregaralcarro")[1];
+		var cantidad = $("#cantidad" + product_id).val();
+		var accion = $(objeto).parent().parent().attr('action');
+		var accion_nueva = accion.split("quantity=")[0] + "quantity=" + cantidad;
+		$(objeto).parent().parent().attr('action',accion_nueva);
+	}
+</script>
+<h1><%= t('.title') %> <%= @marca %></h1>
+ <% @detailProduct.each do |product| %>
+	<h3><%= product.names %></h3>
+<% end %>

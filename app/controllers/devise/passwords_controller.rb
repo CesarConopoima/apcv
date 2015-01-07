@@ -10,6 +10,8 @@ class Devise::PasswordsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     build_resource({})
   end
@@ -21,6 +23,8 @@ class Devise::PasswordsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     self.resource = resource_class.send_reset_password_instructions(resource_params)
 
@@ -38,6 +42,8 @@ class Devise::PasswordsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     self.resource = resource_class.new
     resource.reset_password_token = params[:reset_password_token]
@@ -50,6 +56,8 @@ class Devise::PasswordsController < DeviseController
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
     @products = Product.search(false)
     self.resource = resource_class.reset_password_by_token(resource_params)
 

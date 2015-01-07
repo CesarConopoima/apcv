@@ -1,14 +1,12 @@
 Americanparts::Application.routes.draw do
-
-
   # root :to => 'page#index'
   # get "page/index"
-
   scope "(:locale)", :locale => /en|es/ do
     root :to => 'store#index'
     get "store/index"
     get "store/home"
     get "store/products"
+    get "store/productslist"
     get "page/index"
     resources :products
     devise_for :users

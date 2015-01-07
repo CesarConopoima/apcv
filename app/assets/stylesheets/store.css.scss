@@ -3,32 +3,49 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .store {
+  h1 {
+  padding-top: 25px;
+  padding-left:15px;
+  }
+  .searhTitle {
+  width:100%;
+  padding-top:5px;
+  padding-left:420px;
+    .searchBar {
+      width:170px;
+      height:20px;
+    }
+    .searchBotton {
+      height:20px;
+    }
 
-
+  }
 	.entry {
     position:relative;
-    width: 215px;
+    width: 225px;
     min-height: 220px;
-    height: 205px;
+    height: 305px;
     float:left;
     display:block;
-    padding-left:3px;
-    padding-top:20px;
+    padding-left:4px;
+    padding-top:7px;
     
     a{
     color:#2F516D;
     text-decoration: none;
     }
+
     a:hover{
     color:white;
     background: #708090 ;
     }
+
    img {
       position:absolute;
-      width:80px;
+      width:75px;
       max-height:157px;
       margin-right:10px;
-      margin-left:20px;
+      margin-left:70px;
       margin-bottom:5px;
       z-index:1;
     }
@@ -70,30 +87,59 @@
     width: 140px;
     bottom: 10px;
     color: white;
-    left: 35%;
+    left: 20%;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;   
     z-index:2;
     }
+
+    div.bottom input[type=number]{
+    position:absolute;
+    bottom: 15px;
+    left: 0%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;   
+    z-index:2;
+    }
+
+    div.bottom {
+      h4 {
+      text-align:center;
+      padding-top:155px;
+      }
+      h5 {
+      text-align:center;
+      padding-top:155px;
+      }
+      p{
+      text-align:center;
+      padding-top:115px;
+      }
+    }
+  
     h3 {
       font-size: 100%;
       font-family: sans-serif;
       margin-right: 10px;
-      margin-left: 12px;
       margin-top: 0;
       margin-bottom: 2px;
       color: #2F516D;
+    }
+    h4 {
+      font-size:100%;
+      font-family: sans-serif;
+      text-align:center;
+      color: #1a3745;
+    }
+    h5 {
+      font-size:90%;
+      font-family: sans-serif;
+      text-align:center;
+      color: #1a3745;
     }
 
-    h4 {
-      font-size:80%;
-      font-family: sans-serif;
-      margin-left: 125px;
-      margin-top: 0;
-      margin-bottom: 2px;
-      color: #2F516D;
-    }
 
     p, div.price_line {
       font-size:82%;
@@ -114,11 +160,6 @@
 
     input.button:hover {
       background:#e59400;
-    }
-
-    img.carro {
-      width: 20px;
-      height: 20px;
     }
 
   }
