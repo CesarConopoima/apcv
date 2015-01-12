@@ -9,6 +9,19 @@
 #   hello: "Hello world"
 
 en:
+ activerecord:
+    errors:
+        models:
+          order:
+            attributes:
+             username:
+              blank: "Can't be blank!"
+             address:
+              blank: "Can't be blank!"
+             email:
+              blank: "Can't be blank!"
+             paytype:
+              blank: "Can't be blank!"
  helpers:
   label:
    user:
@@ -20,9 +33,17 @@ en:
     telephone: 'Telephone'
     fax: 'Fax'
     password_confirmation: 'Password confirmation'
+   order:
+    username: 'Username'
+    email: 'Email'
+    address: 'Address'
+    paytype: 'Payment Type'
   submit:
    user:
-    create: "Create account"
+    create: 'Create account'
+   order:
+    create: 'Complete the Order' 
+    new: 'Complete the Order' 
  devise:
   registrations:
    new:
@@ -48,8 +69,12 @@ en:
    add:"Add to cart"
   productslist:
    title: "Products"
+   searchsubmit: "Search"
+   search: "Search our products"
   products:
    title: "Products"
+   searchsubmit: "Search"
+   search: "Search our products"
  carts:
   cart:
    title: 'Your shopping cart'
@@ -103,6 +128,13 @@ en:
    submit: "Create Product"
    misce: "Miscelaneus"
    promtmisce: "Choose si/yes or no/no"
+ orders:
+  new:
+   title: "Order information"
+  form:
+   text1: "User information"
+   text2: "Location information"
+   text3: "Payment information"
  flash_messages:
   product_was_successfully_created: 'The product was successfully created'
   product_was_successfully_updated: 'The product was successfully updated'

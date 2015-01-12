@@ -1,15 +1,17 @@
 class ProductsController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
   before_filter :ensure_common!
   # GET /products
   # GET /products.json
   def index
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
     @productoTra=Product.trane
     @productoYork=Product.york
-    @marcas = Product.marcas
+    @cart = current_cart
+
     @products = Product.all
 
     respond_to do |format|
@@ -21,12 +23,15 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
     @productoTra=Product.trane
     @productoYork=Product.york
-    @marcas = Product.marcas
+    #@products = Product.search(params[:search])
+    @cart = current_cart
+
     @product = Product.find(params[:id])
 
     respond_to do |format|
@@ -38,12 +43,16 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.json
   def new
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
     @productoTra=Product.trane
     @productoYork=Product.york
-    @marcas = Product.marcas
+    @products = Product.search(params[:search])
+    @cart = current_cart
+
+
     @product = Product.new
 
     respond_to do |format|
@@ -54,24 +63,31 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
     @productoTra=Product.trane
     @productoYork=Product.york
-    @marcas = Product.marcas
+    @products = Product.search(params[:search])
+    @cart = current_cart
+
     @product = Product.find(params[:id])
   end
 
   # POST /products
   # POST /products.json
   def create
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
     @productoTra=Product.trane
     @productoYork=Product.york
-    @marcas = Product.marcas
+    @products = Product.search(params[:search])
+    @cart = current_cart
+
+
     @product = Product.new(params[:product])
     respond_to do |format|
       if @product.save
@@ -87,12 +103,16 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.json
   def update
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
     @productoTra=Product.trane
     @productoYork=Product.york
-    @marcas = Product.marcas
+    @products = Product.search(params[:search])
+    @cart = current_cart
+
+
     @product = Product.find(params[:id])
 
     respond_to do |format|
@@ -109,12 +129,15 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    @marcas = Product.marcas
     @productoCop=Product.copeland
     @productoCarr=Product.carrier
     @productoBit=Product.bitzer
     @productoTra=Product.trane
     @productoYork=Product.york
-    @marcas = Product.marcas
+    @products = Product.search(params[:search])
+    @cart = current_cart
+
     @product = Product.find(params[:id])
     @product.destroy
 

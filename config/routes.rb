@@ -5,6 +5,7 @@ Americanparts::Application.routes.draw do
     root :to => 'store#index'
     get "store/index"
     get "store/home"
+    get "store/contact"
     get "store/products"
     get "store/productslist"
     resources :products
@@ -12,6 +13,8 @@ Americanparts::Application.routes.draw do
     resources :line_items
     resources :carts
     resources :orders
+    resources :users
+
   end
   
   resources :line_items do

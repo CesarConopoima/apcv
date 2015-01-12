@@ -147,7 +147,7 @@ ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
 	<ul class="dropable">
 	<li class="drop"><%= link_to t('.HOME'), store_home_path, :class => "topmenu" %></li>
 	<li class="drop"><%= link_to t('.STORE'), store_index_path, :class =>  "topmenu" %></li>
-	<li class="drop"><%= link_to t('.CONTACT'), store_index_path, :class =>  "topmenu" %></li>
+	<li class="drop"><%= link_to t('.CONTACT'), store_contact_path, :class =>  "topmenu" %></li>
 			<% @marcas.each do |producto| %>
 		<li class="drop">
 			<%= link_to producto.marc.upcase, store_productslist_path(:marca => producto.marc), :class => "topmenu" %>

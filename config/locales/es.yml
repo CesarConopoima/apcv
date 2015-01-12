@@ -3,6 +3,27 @@
 # ruby encoding: utf-8
 
 es:
+ activerecord:
+  errors:
+        models:
+          order:
+            attributes:
+             username:
+              blank: 'no puede estar vacío \n'
+             address:
+              blank: "no puede estar vacío"
+             email:
+              blank: "no puede estar vacío"
+             paytype:
+              blank: "no puede estar vacío"
+  models:
+   order: "Orden"
+  attributes:
+   order:
+    username: "Nombre de usuario"
+    email: "Email"
+    address: "Dirección"
+    paytype: "Tipo de pago"
  helpers:
   label:
    user:
@@ -14,9 +35,17 @@ es:
     telephone: 'Teléfono'
     fax: 'Fax'
     password_confirmation: 'Confirmar la contraseña'
+   order:
+    username: 'Nombre de usuario'
+    email: 'Email'
+    address: 'Dirección'
+    paytype: 'Tipo de pago'
   submit:
    user:
-    create: "Crear cuenta"
+    create: 'Crear cuenta'
+   order:
+    create: 'Completar la orden' 
+    new: 'Completar la orden' 
  devise:
   registrations:
    new:
@@ -32,16 +61,22 @@ es:
   index:
    title: "Consiga el producto de su marca favorita"
    searchsubmit: "Buscar"
-   search: "Consigue nuestro productos"
+   search: "Consigua nuestro productos"
   home:
    title: "Nuestro negocio son los repuestos de compresores"
    subtitle: "Encuentre los repuestos de sus marcas favoritas"
    text1: "Todos nuestros productos para vender alrededor del mundo"
    text2: "Le brindamos a nuestros clientes partes compresores de alta calidad"
   partialproducts:
-   add:"Agregar al carro"
+   add:"Add to cart"
   productslist:
-   title: "Productos"
+   title: "Products"
+   searchsubmit: "Buscar"
+   search: "Consigua nuestro productos"
+  products:
+   title: "Products"
+   searchsubmit: "Buscar"
+   search: "Consigua nuestro productos"
  carts:
   cart:
    title: 'Tu carro de compras'
@@ -94,6 +129,13 @@ es:
    submit: "Crear Producto"
    misce: "Miscelaneus"
    promtmisce: "Escoja si o no"
+ orders:
+  new:
+   title: "Información de la orden"
+  form:
+   text1: "Información de usuario"
+   text2: "Información de contacto"
+   text3: "Información de pago"
   flash_messages:
     product_was_successfully_created: 'El producto fué creado con éxito'
     product_was_successfully_updated: 'El producto ha sido actulizado'

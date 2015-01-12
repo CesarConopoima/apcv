@@ -19,7 +19,7 @@ pre {
 }
 
 a {
-  color: #000;
+  color: black;
   &:visited {
     color: #666;
   }
@@ -41,17 +41,17 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: #ffdaa1;
   display: table;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px solid #ffdaa1;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: white;
   h2 {
     text-align: left;
     font-weight: bold;
@@ -59,11 +59,12 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff;
+    background-color: #ffdaa1;
+    color: #333333;
   }
   ul li {
     font-size: 12px;
-    list-style: square;
+    color: #cc4c36;
+    font-type:bold;
   }
 }

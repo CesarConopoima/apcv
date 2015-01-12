@@ -7,4 +7,15 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password,:username,:companyname,:telephone,:fax, :password_confirmation, :remember_me
+  after_destroy :ensure_an_admin_remains
+
+
+private 
+	def ensure_an_admin_remains
+		if !User.find_by_common(true)
+			raise "You can't erase last admin"
+		end
+	end
+
+
 end

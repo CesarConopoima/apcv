@@ -9,7 +9,7 @@
       </ul>
     </div>
   <% end %>
-<h3><i class="fa fa-info"></i> User information</h3>
+<h3><i class="fa fa-info"></i> <%= t('.text1') %> </h3>
 <table>
       <tr>
         <td class ="fieldForm"><%= f.label :username %></td>
@@ -20,14 +20,14 @@
         <td><%= f.text_field :email %></td>
       </tr>
 </table>
-<h3><i class="fa fa-globe"></i> Location information</h3>
+<h3><i class="fa fa-globe"></i> <%= t('.text2') %></h3>
 <table>
       <tr>
         <td class ="fieldForm"><%= f.label :address %></td>
         <td><%= f.text_area :address %></td>
       </tr>
 </table>
-<h3><i class="fa fa-usd"></i> Payment information</h3>
+<h3><i class="fa fa-usd"></i> <%= t('.text3') %></h3>
 <table>
       <tr>
         <td class ="fieldForm"> <%= f.label :paytype %></td>
@@ -35,6 +35,6 @@
       </tr>
 </table>
 <div class="actions">
-    <%= f.submit 'Complete the order' %>
+    <%= f.submit :class => "button" %>
 </div>
 <% end %>
