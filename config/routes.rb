@@ -6,6 +6,7 @@ Americanparts::Application.routes.draw do
     get "store/index"
     get "store/home"
     get "store/products"
+    get "store/productslist"
     resources :products
     devise_for :users
     resources :line_items
