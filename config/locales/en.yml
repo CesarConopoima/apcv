@@ -48,6 +48,8 @@ en:
    add:"Add to cart"
   productslist:
    title: "Products"
+  products:
+   title: "Products"
  carts:
   cart:
    title: 'Your shopping cart'

@@ -50,7 +50,7 @@ class Product < ActiveRecord::Base
   	end
 
   	def self.detailproduct(name,brand)
-  		find_by_sql("select * from products where name like '#{@name}%' and marc like '#{@brand}' ")
+  		find_by_sql("select * from products where name like '#{name}%' and marc like '#{brand}' ")
   	end
   	def self.detailproductlist(brand)
   		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc ='#{brand}' group by names order by names")
