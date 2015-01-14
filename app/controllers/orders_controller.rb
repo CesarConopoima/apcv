@@ -51,13 +51,12 @@ class OrdersController < ApplicationController
     @productoYork=Product.york
     @products = Product.search(params[:search])
     @order = Order.new
-
-    @cart = current_cart
-    if @cart.line_items.empty?
-      redirect_to store_index_path, notice: "Your cart is empty"
-      return
-    end
-
+  
+      @cart = current_cart
+      if @cart.line_items.empty?
+        redirect_to store_index_path, notice: "Your cart is empty"
+        return
+      end
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @order }
@@ -91,19 +90,29 @@ class OrdersController < ApplicationController
 
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
+    
+    captcha_message = "The data you entered for the CAPTCHA wasn't correct.  Please try again"
+    
+    if verify_recaptcha
 
-    respond_to do |format|
-      if @order.save
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
-        format.html { redirect_to store_index_path, notice: 'Thank you for your order.' }
-        format.json { render json: @order, status: :created, location: @order }
-      else
-        @cart = current_cart
-        format.html { render action: "new" }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @order.save
+          Cart.destroy(session[:cart_id])
+          session[:cart_id] = nil
+          format.html { redirect_to store_index_path, notice: 'Thank you for your order.' }
+          format.json { render json: @order, status: :created, location: @order }
+        else
+          @cart = current_cart
+          format.html { render action: "new" }
+          format.json { render json: @order.errors, status: :unprocessable_entity }
+        end
       end
+
+    else
+      flash.now[:alert] = captcha_message
+      render :new
     end
+
   end
 
   # PUT /orders/1

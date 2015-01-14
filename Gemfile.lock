@@ -110,6 +110,7 @@ GEM
     rake (10.4.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    recaptcha (0.3.6)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rubyzip (0.9.9)
@@ -151,6 +152,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.0)
   rails_12factor
+  recaptcha
   sass-rails (~> 3.2.3)
   thin
   uglifier (>= 1.0.3)

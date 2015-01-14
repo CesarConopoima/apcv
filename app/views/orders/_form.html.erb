@@ -33,7 +33,9 @@
         <td class ="fieldForm"> <%= f.label :paytype %></td>
         <td><%= f.text_field :paytype %></td>
       </tr>
-</table>
+</table> <br/>
+<%= recaptcha_tags :display => { :theme => "white" } %>
+<br/>
 <div class="actions">
     <%= f.submit :class => "button" %>
 </div>

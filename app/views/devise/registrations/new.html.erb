@@ -42,8 +42,14 @@
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
   </table>
+
+<!-- <div class="g-recaptcha" data-sitekey="6LfobQATAAAAAK5MSRwagq5H6nMYfjWQcyHyV1Bb"></div> -->
+<!-- this maybe change when new version of recaptcha is launched -->
+<br/>
+<%= recaptcha_tags :display => { :theme => "white" } %>
+<br/>
 <div><%= f.submit :class => "button" %></div>
 <% end %>
-
+<br/>
 <%= render "devise/shared/links" %>
 </div>
