@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+   before_filter :ensure_common!
    
    def index
     @marcas = Product.marcas

@@ -3,3 +3,13 @@
 <%= render 'form' %>
 
 <%= link_to t('.back_link'), products_path %>
+<br/>
+
+
+<%= form_tag products_path, :method => 'get', :id => "productos_search" do %>
+  <p>
+  	<%= t('.text1') %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>

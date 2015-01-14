@@ -115,7 +115,8 @@ en:
    back: "Back"
   new:
    title: "New Product"
-   back_link: "Back"
+   back_link: "List all products"
+   text1: "Find your item"
   form:
    name: "Name"
    code: "Code"
@@ -128,6 +129,8 @@ en:
    submit: "Create Product"
    misce: "Miscelaneus"
    promtmisce: "Choose si/yes or no/no"
+   prom: "Promotion"
+   promtprom: "Choose si/yes or no/no"
  orders:
   new:
    title: "Order information"

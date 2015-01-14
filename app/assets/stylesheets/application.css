@@ -130,3 +130,14 @@ div .login{
   border:none;
   background:#e59400;
 }
+
+.fieldForm {
+  height: 35px;
+}
+
+.fillInput input {
+  width: 200px;
+}
+.fillTable {
+  padding-left: 50px;
+}

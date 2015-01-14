@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_filter :ensure_common!, only: [:index,:show,:edit,:update,:destroy]
   # GET /orders
   # GET /orders.json
   def index

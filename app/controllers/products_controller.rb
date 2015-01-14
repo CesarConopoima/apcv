@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  #before_filter :authenticate_user!
+  before_filter :authenticate_user!
   before_filter :ensure_common!
   # GET /products
   # GET /products.json
@@ -12,7 +12,12 @@ class ProductsController < ApplicationController
     @productoYork=Product.york
     @cart = current_cart
 
-    @products = Product.all
+    #Este condicional es para saber si en que vista se encuentra
+    if params[:search] == nil 
+      @products = Product.all
+    else
+      @products = Product.search(params[:search])
+    end 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -49,6 +54,7 @@ class ProductsController < ApplicationController
     @productoBit=Product.bitzer
     @productoTra=Product.trane
     @productoYork=Product.york
+
     @products = Product.search(params[:search])
     @cart = current_cart
 

@@ -11,43 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, t('.name') %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :code, t('.code') %><br />
-    <%= f.text_field :code %>
-  </div>
-  <div class="field">
-    <%= f.label :marc, t('.marc') %><br />
-    <%= f.text_field :marc %>
-  </div>
-  <div class="field">
-    <%= f.label :quantity, t('.quantity') %><br />
-    <%= f.number_field :quantity %>
-  </div>
-  <div class="field">
-    <%= f.label :price, t('.price') %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :imageurl, t('.imgurl') %><br />
-    <%= f.text_field :imageurl %>
-  </div>
-  <div class="field">
-    <%= f.label :model, t('.model') %><br />
-    <%= f.text_field :model %>
-  </div>
-   <div class="field">
-    <%= f.label :misce, t('.misce') %><br />
-    <%= f.select :flagmis, Product::MISCELANEUS, 
-    prompt: t('.promtmisce') %>
-  </div>
-  <div class="field">
-    <%= f.label :addedimageurl, t('.imgurladd') %><br />
-    <%= f.text_field :addedimageurl %>
-  </div>
+<table class="fillTable">
+      <tr>
+        <td class ="fieldForm"><%= f.label :name, t('.name') %></td>
+        <td class ="fillInput"> <%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"><%= f.label :code, t('.code') %></td>
+        <td class ="fillInput"><%= f.text_field :code %></td>
+      </tr>
+       <tr>
+        <td class ="fieldForm"><%= f.label :marc, t('.marc') %></td>
+        <td class ="fillInput"><%= f.text_field :marc %></td>
+      </tr>
+       <tr>
+        <td class ="fieldForm"><%= f.label :quantity, t('.quantity') %></td>
+        <td class ="fillInput"><%= f.number_field :quantity %></td>
+      </tr>
+       <tr>
+        <td class ="fieldForm"><%= f.label :price, t('.price') %></td>
+        <td class ="fillInput"><%= f.text_field :price %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"><%= f.label :imageurl, t('.imgurl') %></td>
+        <td class ="fillInput"><%= f.text_field :imageurl %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"><%= f.label :model, t('.model') %></td>
+        <td class ="fillInput"><%= f.text_field :model %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"><%= f.label :misce, t('.misce') %></td>
+        <td class ="fillInput"><%= f.select :flagmis, Product::MISCELANEUS, prompt: t('.promtmisce') %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"><%= f.label :addedimageurl, t('.imgurladd') %></td>
+        <td class ="fillInput"><%= f.text_field :addedimageurl %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"><%= f.label :prom, t('.prom') %></td>
+        <td class ="fillInput"><%= f.select :flagprom, Product::PROMOTION, prompt: t('.promtprom') %></td>
+      </tr>
+</table>
   <div class="actions">
     <%= f.submit t('.submit') %>
   </div>

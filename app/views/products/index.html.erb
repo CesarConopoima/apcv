@@ -1,21 +1,28 @@
 <h1><%= t('.title') %></h1>
 
-<table>
+<table class="products" width="100%" style="table-layout: fixed; ">
+    <col width="150px">
+    <col width="80px">
+    <col width="50px">
+    <col width="50px">
+    <col width="70px">
+    <col width="100px">
+    <col width="70px">
+    <col width="50px">
+    <col width="50px">
+    <col width="50px">
   <tr>
     <th><%= t('.name') %></th>
     <th><%= t('.code') %></th>
     <th><%= t('.marc') %></th>
     <th><%= t('.quantity') %></th>
     <th><%= t('.price') %></th>
-    <th><%= t('.imgurl') %></th>
     <th><%= t('.model') %></th>
     <th><%= t('.misce') %></th>
-    <th><%= t('.imgurladd') %></th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
 <% @products.each do |product| %>
   <tr>
     <td><%= product.name %></td>
@@ -23,10 +30,8 @@
     <td><%= product.marc %></td>
     <td><%= product.quantity %></td>
     <td><%= product.price %></td>
-    <td><%= product.imageurl %></td>
     <td><%= product.model %></td>
     <td><%= product.flagmis %></td>
-    <td><%= product.addedimageurl %></td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>

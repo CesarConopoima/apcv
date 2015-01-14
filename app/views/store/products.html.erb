@@ -19,11 +19,11 @@
 
 <h1><%= @name.pluralize.capitalize %> <em><%= @marca %> </em> </h1>
 
-<%= form_tag store_index_path, :method => 'get', :id => "productos_search" do %>
-	    <h3 class="searhTitle"><i class="fa fa-search"></i> &nbsp <%= t('.search') %>
-    	<%= text_field_tag :search, params[:search], :class => "searchBar" %>  
-    	<%= submit_tag t('.searchsubmit'), :name => nil, :class => "searchBotton" %>  
-	    <% end %> 
+	<%= form_tag store_index_path, :method => 'get', :id => "productos_search" do %>
+		<h3 class="searhTitle"><i class="fa fa-search"></i> &nbsp <%= t('.search') %>
+	    	<%= text_field_tag :search, params[:search], :class => "searchBar" %>  
+	    	<%= submit_tag t('.searchsubmit'), :name => nil, :class => "searchBotton" %>  
+	<% end %> 
 	    </h3>
 	    
  <% @detailProduct.each do |product| %>

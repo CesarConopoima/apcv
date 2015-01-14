@@ -1,6 +1,14 @@
 <h1>Listing orders</h1>
 
-<table>
+<table class="products" width="100%" style="table-layout: fixed; ">
+    <col width="100px">
+    <col width="100px">
+    <col width="100px">
+    <col width="100px">
+    <col width="100px">
+    <col width="100px">
+    <col width="100px">
+    <col width="100px">
   <tr>
     <th>Username</th>
     <th>Address</th>
@@ -8,8 +16,8 @@
     <th>Userid</th>
     <th>Status</th>
     <th>Paytype</th>
-    <th></th>
-    <th></th>
+    <th>Created at</th>
+    <th>Updated at</th>
     <th></th>
   </tr>
 
@@ -21,13 +29,12 @@
     <td><%= order.userid %></td>
     <td><%= order.status %></td>
     <td><%= order.paytype %></td>
+    <td><%= order.created_at %></td>
+    <td><%= order.updated_at %></td>
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Destroy', order, method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Order', new_order_path %>

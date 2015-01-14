@@ -9,7 +9,7 @@ es:
           order:
             attributes:
              username:
-              blank: 'no puede estar vacío \n'
+              blank: "no puede estar vacío \n"
              address:
               blank: "no puede estar vacío"
              email:
@@ -116,7 +116,8 @@ es:
    back: "Atras"
   new:
    title: "Nuevo producto"
-   back_link: "Atras"
+   back_link: "Listar todos los productos"
+   text1: "Consiga su producto"
   form:
    name: "Nombre"
    code: "Codigo"
@@ -129,6 +130,8 @@ es:
    submit: "Crear Producto"
    misce: "Miscelaneus"
    promtmisce: "Escoja si o no"
+   prom: "Promoción"
+   promtprom: "Escoja si o no"
  orders:
   new:
    title: "Información de la orden"

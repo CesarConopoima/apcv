@@ -9,23 +9,35 @@ class Product < ActiveRecord::Base
 		with: %r{\.(gif|jpg|png)$}i,
 		message: 'La imagen debe tener extension JPG,GIF o PNG'
 		}
-	MISCELANEUS = [ "no", "si" ]	
-	attr_accessible :name, :code, :marc, :quantity, :price, :imageurl, :model,:flagmis,:addedimageurl
+	MISCELANEUS = [ "no", "si" ]
+	PROMOTION = [ "si", "no" ]	
+	attr_accessible :name, :code, :marc, :quantity, :price, :imageurl, :model,:flagmis,:addedimageurl,:flagprom
 	
 	def self.search(search)  
 	     if search  
 	     	if search.include?("copeland") or search.include?("Copeland") 
 	     		@product = search.gsub("copeland","").gsub("Copeland","")
-	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}%","Copeland",)  
+	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}k%","Copeland",)  
 	     	elsif search.include?("carrier") or search.include?("Carrier")
 	     		@product = search.gsub("carrier","").gsub("Carrier","")
 	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}%","Carrier",)  
+	     	elsif search.include?("bitzer") or search.include?("Bitzer")
+	     		@product = search.gsub("bitzer","").gsub("Bitzer","")
+	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}%","Bitzer",)  
+	     	elsif search.include?("york") or search.include?("York")
+	     		@product = search.gsub("york","").gsub("York","")
+	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}%","York",)  
+	     	elsif search.include?("trane") or search.include?("Trane")
+	     		@product = search.gsub("trane","").gsub("Trane","")
+	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}%","Trane",)  
 	     	else
 	     		where('name LIKE ? OR code LIKE ?',"%#{search.upcase}%","%#{search.upcase}%").limit(8)
 	   		end
+	   	#aqui el porDefault Seran los productos que tengan mayor volumen de ventas
+	   	#eso lo escojera el administrador de la pag
 	    else
 	      #where('imageurl LIKE ?', "logo%").order('created_at DESC').limit(8)
-	      where('imageurl NOT LIKE ?', "logo%").order("RANDOM()").limit(8)
+	      where('imageurl NOT LIKE ? and flagprom LIKE ?', "logo%","si").limit(8)
 	    end  
   	end 
 
