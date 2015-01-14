@@ -61,10 +61,11 @@ en:
    searchsubmit: "Search" 
    search: "Search our products"
   home:
-   title: "Our bussines are compressors parts"
+   title: "Our bussines is compressors parts"
    subtitle: "Find the producs of your favorite brands"
-   text1: "All ours products to sell around the world"
+   text1: "All our manufactured parts to sell around the world"
    text2: "We serve our clients whit high quality compressors parts"
+   text3: "Our objective is to provide products for all brands in the market"
   partialproducts:
    add:"Add to cart"
   productslist:

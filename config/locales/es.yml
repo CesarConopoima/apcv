@@ -65,8 +65,9 @@ es:
   home:
    title: "Nuestro negocio son los repuestos de compresores"
    subtitle: "Encuentre los repuestos de sus marcas favoritas"
-   text1: "Todos nuestros productos para vender alrededor del mundo"
-   text2: "Le brindamos a nuestros clientes partes compresores de alta calidad"
+   text1: "Todos nuestras piezas manufacturadas para vender alrededor del mundo"
+   text2: "Le brindamos a nuestros clientes partes de compresores de alta calidad"
+   text3: "Nuestro objetivo es suministrar productos para todas las marcas del mercado"
   partialproducts:
    add:"Add to cart"
   productslist:

@@ -2,7 +2,7 @@ Americanparts::Application.routes.draw do
   # root :to => 'page#index'
   # get "page/index"
   scope "(:locale)", :locale => /en|es/ do
-    root :to => 'store#index'
+    root :to => 'store#home'
     get "store/index"
     get "store/home"
     get "store/contact"
