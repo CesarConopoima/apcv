@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password,:username,:companyname,:telephone,:fax, :password_confirmation, :remember_me
   after_destroy :ensure_an_admin_remains
 
+  validates :email,:username,:companyname,:telephone,:fax, presence: true
+
 
 private 
 	def ensure_an_admin_remains
