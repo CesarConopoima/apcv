@@ -52,6 +52,8 @@ class OrdersController < ApplicationController
     @products = Product.search(params[:search])
     @order = Order.new
   
+   
+
       @cart = current_cart
       if @cart.line_items.empty?
         redirect_to store_index_path, notice: "Your cart is empty"
@@ -91,6 +93,10 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
     
+    @user = current_user
+    @name = @user.username
+    @order.username = @name
+
     captcha_message = "The data you entered for the CAPTCHA wasn't correct.  Please try again"
     
     if verify_recaptcha
