@@ -12,6 +12,10 @@ gem 'heroku'
 
 gem "recaptcha", :require => "recaptcha/rails"
 
+#including gem to generate country list
+
+gem 'country_select', github: 'stefanpenner/country_select'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

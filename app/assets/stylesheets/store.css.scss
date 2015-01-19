@@ -3,6 +3,96 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .store {
+  .photo {
+  position:relative;
+  width:320px;
+  -webkit-animation: round 16s infinite; /* Safari 4+ */
+  opacity:0;
+  display: inline;
+}
+
+$size: 45%;
+$fontSize: 2.0em;
+$radius: 20px;
+
+    .content{
+    float:left;
+    width:50%;
+    display:inline;
+    }
+
+    .content1 {
+    float:left;
+    width:$size;
+    color:white;
+    display:inline;
+    margin-left:20px;
+    margin-top:10px;
+    margin-bottom:10px;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;  
+
+      #globe {
+        font-size: $fontSize;  
+        color: #004466;   
+      } 
+
+      #gear {
+      font-size: $fontSize;  
+      color: #004466;   
+      }
+
+      .icons {
+        text-align:center;
+        font-size: $fontSize;
+      }
+      .text {
+        padding-left: 30px;
+        font-size:1.5em;
+        text-align:center;
+      }
+    }
+
+    .content2 {
+    float:left;
+    padding-left:5px;
+    size:20px;
+    width:$size;
+    color:white;
+    display:inline;
+    }
+   
+
+
+
+  .divImg {
+    /*background: #063041;*/
+    background: linear-gradient(to right, #3A434A , white) no-repeat;
+    border-radius: 20px;
+    min-height: 700px;
+  }
+  .divImg .title2 {
+    padding-top:35px;
+    padding-left:50px;
+    color:white;
+  }
+  .divImg .title3 {
+    padding-left:70px;
+    color:white;
+  }
+
+
+.container {
+  /*background: #063041;*/
+  /*background: linear-gradient(to right, #063041 , white) no-repeat;*/
+  width:350px;
+  height:300px;
+  overflow:hidden;
+  position:relative;
+  padding-left:20px;
+}
+
   h1 {
   padding-top: 25px;
   padding-left:15px;

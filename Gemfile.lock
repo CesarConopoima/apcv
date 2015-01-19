@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/stefanpenner/country_select.git
+  revision: d3ba0b99beacf66f189816db88ed46342698b539
+  specs:
+    country_select (2.1.0)
+      countries (~> 0.9, >= 0.9.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,6 +46,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    currencies (0.4.2)
     daemons (1.1.9)
     devise (2.2.8)
       bcrypt-ruby (~> 3.0)
@@ -145,6 +155,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
+  country_select!
   devise (~> 2.2.8)
   font-awesome-rails
   heroku

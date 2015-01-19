@@ -39,7 +39,7 @@
 	border-radius: 7px;
 	background: #286e28;
 	text-aling:center;
-	width: 90%;
+	width: 100%;
 }
 
 .purchase input[type=submit]:hover {
@@ -48,5 +48,28 @@
 	border-radius: 7px;
 	background: #4c924c;
 	text-aling:center;
-	width: 90%;
+	width: 100%;
 }
+
+table th, td {
+	text-align:center;
+}
+
+table th {
+	color: #063041; 
+}
+
+.show {
+	padding-top:20px;
+	padding-left:20px;
+}
+.show p {
+	font-size:0.7em;
+	margin-top:40px;
+}
+
+.color {
+	color: #3a434a;
+	padding-left:100px;
+}
+

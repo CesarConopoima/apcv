@@ -30,6 +30,30 @@
       <td><%= f.text_field :fax %></td>
     </tr>
   </table>
+
+  <h3><i class="fa fa-info"></i> <i class="fa fa-globe"></i> <%= t('.address') %></h3>
+  <table>
+    <tr>
+      <td class ="fieldForm"><%= f.label :country %></td>
+      <td><%= country_select("user", "country" , { priority_countries: ["US", "CL","CO","BR","PE","EC","VE"], selected: "US" },{ class: 'form-control', data: { attribute: "value" } }) %></td>
+    </tr>
+    <tr>
+      <td class ="fieldForm"><%= f.label :city %></td>
+      <td><%= f.text_field :city %></td>
+    </tr>
+    <tr>
+      <td class ="fieldForm"><%= f.label :stateprovince %></td>
+      <td><%= f.text_field :stateprovince %></td>
+    </tr>
+    <tr>
+      <td class ="fieldForm"><%= f.label :zipcode %></td>
+      <td><%= f.text_field :zipcode %></td>
+    </tr>
+    <tr>
+      <td class ="fieldForm"><%= f.label :address %></td>
+      <td><%= f.text_area :address, :cols => 30, :rows => 6 %></td>
+    </tr>
+  </table>
     
 <h3><i class="fa fa-info"></i> <%= t('.security') %></h3>
   <table>
@@ -45,11 +69,16 @@
 
 <!-- <div class="g-recaptcha" data-sitekey="6LfobQATAAAAAK5MSRwagq5H6nMYfjWQcyHyV1Bb"></div> -->
 <!-- this maybe change when new version of recaptcha is launched -->
-<br/>
-<%= recaptcha_tags :display => { :theme => "white" } %>
-<br/>
-<div><%= f.submit :class => "button" %></div>
-<% end %>
-<br/>
-<%= render "devise/shared/links" %>
+  <div class="recaptcha">
+    <br/>
+    <%= recaptcha_tags :display => { :theme => "white" } %>
+    <br/> 
+  </div>
+  
+  <div><%= f.submit :class => "button" %></div>
+  <% end %>
+  <br/>
+    <div class="link">
+      <%= render "devise/shared/links" %>
+    </div>
 </div>

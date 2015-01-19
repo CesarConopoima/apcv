@@ -32,6 +32,11 @@ en:
     company_name: 'Company name'
     telephone: 'Telephone'
     fax: 'Fax'
+    country: 'Country'
+    city: 'City'
+    stateprovince: 'State/Province'
+    zipcode: 'Zip Code'
+    address: 'Address'
     password_confirmation: 'Password confirmation'
    order:
     username: 'Username'
@@ -51,6 +56,7 @@ en:
     personal: 'Your personal information'
     contac: 'Contac information'
     security: 'Security information'
+    address: 'Address information'
   shared:
    links:
     forgot: 'Forgot your password?'

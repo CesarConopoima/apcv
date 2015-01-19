@@ -1,13 +1,22 @@
 <h1>Listing users</h1>
 
-<table>
+<table width="100%" style="table-layout: fixed; ">
+    <col width="100px">
+    <col width="170px">
+    <col width="100px">
+    <col width="100px">
+    <col width="100px">
+    <col width="100px">
+    <col width="100px">
+    <col width="100px">
   <tr>
     <th>Username</th>
     <th>Email</th>
+    <th>Country</th>
+    <th>City</th>
+    <th>State/Province</th>
+    <th>Zip Code</th>       
     <th>Secret</th>
-    <th></th>
-    <th></th>
-    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,8 +26,13 @@
   <tr>
     <td><%= user.username %></td>
     <td><%= user.email %></td>
+    <td><%= user.country %></td>
+    <td><%= user.city %></td>
+    <td><%= user.stateprovince %></td>
+    <td><%= user.zipcode %></td>
     <td><%= user.common %></td>
     <td> <%= link_to "Erase", user_path(user), :method => :delete %></td>
+    <td> <%= link_to "Show", user %></td>
     <td></td>
     <td></td>
     <td></td>

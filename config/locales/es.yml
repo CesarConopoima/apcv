@@ -34,6 +34,11 @@ es:
     company_name: 'Nombre de la compañia'
     telephone: 'Teléfono'
     fax: 'Fax'
+    country: 'País'
+    city: 'Ciudad'
+    stateprovince: 'Estado/Provincia'
+    zipcode: 'Código Zip'
+    address: 'Dirección'
     password_confirmation: 'Confirmar la contraseña'
    order:
     username: 'Nombre de usuario'
@@ -52,6 +57,7 @@ es:
     title: 'Crear una cuenta'
     personal: 'Información personal'
     contac: 'Información de contacto'
+    address: 'Dirección'
     security: 'Información de seguridad'
   shared:
    links:

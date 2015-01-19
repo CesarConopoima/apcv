@@ -3,9 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-h2 {
-	color:black;
-}
 .createuser {
 	text-aling:center;
 }
@@ -14,17 +11,42 @@ h2 {
 }
 .button {
 	height: 30px;
-	width: 200px;
+	width: 250px;
 	background:#286e28;
 	border-radius: 5px;
 	color:white;
+	margin-top:20px;
+	margin-left:250px;
 }
 .button:hover {
 	height: 30px;
-	width: 200px;
+	width: 250px;
 	background: #689968;
 	border-radius: 5px;
 }
 .fieldForm {
 	width:250px;
+}
+
+.form-control {
+	width:250px;
+}
+
+h3 {
+	margin-top:30px;
+	margin-left:50px;
+}
+
+h2 {
+	color:black;
+	margin-top:20px;
+}
+
+.link a{
+	margin-left:250px;
+	paddin-top:100px;
+	font-size:1.5em;
+}
+.recaptcha {
+	margin-left:220px;
 }

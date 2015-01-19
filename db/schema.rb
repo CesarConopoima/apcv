@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150113161710) do
+ActiveRecord::Schema.define(:version => 20150116000545) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -74,6 +74,11 @@ ActiveRecord::Schema.define(:version => 20150113161710) do
     t.string   "companyname"
     t.string   "telephone"
     t.string   "fax"
+    t.string   "country"
+    t.string   "zipcode"
+    t.string   "city"
+    t.string   "stateprovince"
+    t.text     "address"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
