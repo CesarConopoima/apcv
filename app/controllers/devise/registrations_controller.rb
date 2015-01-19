@@ -30,7 +30,7 @@ class Devise::RegistrationsController < DeviseController
 
     captcha_message = "The data you entered for the CAPTCHA wasn't correct.  Please try again"
 
-    #if verify_recaptcha
+    if verify_recaptcha
       
         if resource.save
           if resource.active_for_authentication?
@@ -46,10 +46,10 @@ class Devise::RegistrationsController < DeviseController
           clean_up_passwords resource
           respond_with resource
         end
-    # else
-    #   flash.now[:alert] = captcha_message
-    #   render :new
-    # end
+    else
+      flash.now[:alert] = captcha_message
+      render :new
+    end
 
   end
 
