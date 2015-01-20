@@ -5,6 +5,7 @@ Americanparts::Application.routes.draw do
     root :to => 'store#home'
     get "store/index"
     get "store/home"
+    get "store/terms"
     get "store/contact"
     get "store/products"
     get "store/productslist"

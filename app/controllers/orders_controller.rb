@@ -52,7 +52,9 @@ class OrdersController < ApplicationController
     @products = Product.search(params[:search])
     @order = Order.new
   
-   
+    @user = current_user
+    @order.username = @user.username
+    @order.email = @user.email
 
       @cart = current_cart
       if @cart.line_items.empty?
@@ -93,9 +95,6 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
     
-    @user = current_user
-    @name = @user.username
-    @order.username = @name
 
     captcha_message = "The data you entered for the CAPTCHA wasn't correct.  Please try again"
     

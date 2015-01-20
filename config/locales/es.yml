@@ -43,7 +43,11 @@ es:
    order:
     username: 'Nombre de usuario'
     email: 'Email'
-    address: 'Dirección'
+    address: 'Dirección de envió'
+    address2: 'Dirección de facturación'
+    telephone: 'Telefono'
+    telephone2: 'Telefono'
+    accept: 'Terminos y condiciones'
     paytype: 'Tipo de pago'
   submit:
    user:
@@ -144,8 +148,9 @@ es:
    title: "Información de la orden"
   form:
    text1: "Información de usuario"
-   text2: "Información de contacto"
-   text3: "Información de pago"
+   text2: "Información de envío"
+   text3: "Información de facturación"
+   text4: "Información de pago"
   flash_messages:
     product_was_successfully_created: 'El producto fué creado con éxito'
     product_was_successfully_updated: 'El producto ha sido actulizado'

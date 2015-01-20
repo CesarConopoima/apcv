@@ -41,8 +41,12 @@ en:
    order:
     username: 'Username'
     email: 'Email'
-    address: 'Address'
+    address: 'Shipping Address'
+    address2: 'Billing Address'
+    telephone: 'Telephone'
+    telephone2: 'Telephone'
     paytype: 'Payment Type'
+    accept: 'Terms and conditions'
   submit:
    user:
     create: 'Create account'
@@ -143,8 +147,9 @@ en:
    title: "Order information"
   form:
    text1: "User information"
-   text2: "Location information"
-   text3: "Payment information"
+   text2: "Shipping information"
+   text3: "Billing information"
+   text4: "Payment information"
  flash_messages:
   product_was_successfully_created: 'The product was successfully created'
   product_was_successfully_updated: 'The product was successfully updated'

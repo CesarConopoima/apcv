@@ -24,21 +24,45 @@
 <table class="fillTable">
       <tr>
         <td class ="fieldForm"><%= f.label :address %></td>
-        <td><%= f.text_area :address %></td>
+        <td><%= f.text_area :address, :cols => 30, :rows => 6  %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"><%= f.label :telephone %></td>
+        <td><%= f.text_field :telephone1 %></td>
       </tr>
 </table>
-<h3><i class="fa fa-usd"></i> <%= t('.text3') %></h3>
+<h3><i class="fa fa-globe"></i> <%= t('.text3') %></h3>
+<table class="fillTable">
+      <tr>
+        <td class ="fieldForm"><%= f.label :address2 %></td>
+        <td><%= f.text_area :address2,:cols => 30, :rows => 6  %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"><%= f.label :telephone2 %></td>
+        <td><%= f.text_field :telephone2 %></td>
+      </tr>
+</table>
+<h3><i class="fa fa-usd"></i> <%= t('.text4') %></h3>
 <table class="fillTable">
       <tr>
         <td class ="fieldForm"> <%= f.label :paytype %></td>
         <td><%= f.text_field :paytype %></td>
       </tr>
+
 </table> 
+<table class="fillTable">
+      <tr>
+        <td class ="fieldForm"><%= f.label :accept %></td>
+        <td><%= check_box_tag(:accept, :true) %> <%= link_to "Terminos de uso", store_terms_path  %></td>
+      </tr>
+</table> 
+
 <div class ="recaptcha">
 <br/>
 <%= recaptcha_tags :display => { :theme => "white" } %>
 <br/>
 </div>
+
 <div class="actions">
     <%= f.submit :class => "button" %>  
 </div>

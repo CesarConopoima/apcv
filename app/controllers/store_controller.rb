@@ -55,4 +55,14 @@ class StoreController < ApplicationController
     @detailProduct = Product.detailproductlist(@marca)
     #@detailProduct = Product.copeland
   end
+  def terms
+    @marcas = Product.marcas
+    @productoCop=Product.copeland
+    @productoCarr=Product.carrier
+    @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
+    @products = Product.search(params[:search])
+    @cart = current_cart
+  end
 end
