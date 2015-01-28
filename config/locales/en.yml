@@ -22,11 +22,13 @@ en:
               blank: "Can't be blank!"
              paytype:
               blank: "Can't be blank!"
+# Helpers Traductions
  helpers:
   label:
    user:
     email: 'Email'
-    username: 'Username'
+    username: 'Name'
+    lastname: 'Last name'
     password: 'Password'
     remember_me: 'Remember me'
     company_name: 'Company name'
@@ -49,7 +51,12 @@ en:
     accept: 'Terms and conditions'
   submit:
    user:
-    create: 'Create account'
+    registrations:
+     new:
+      create: 'Create account'
+    passwords:
+     new:
+      create: 'update'
    order:
     create: 'Complete the Order' 
     new: 'Complete the Order' 
@@ -61,6 +68,9 @@ en:
     contac: 'Contac information'
     security: 'Security information'
     address: 'Address information'
+  passwords:
+   new:
+    title: 'Forgot your password?'
   shared:
    links:
     forgot: 'Forgot your password?'

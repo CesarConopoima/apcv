@@ -10,6 +10,8 @@ es:
             attributes:
              username:
               blank: "no puede estar vacío \n"
+             lastname:
+              blank: "no puede estar vacío \n"
              address:
               blank: "no puede estar vacío"
              email:
@@ -28,7 +30,8 @@ es:
   label:
    user:
     email: 'Email'
-    username: 'Nombre de usuario'
+    username: 'Nombre'
+    lastname: 'Apellido'
     password: 'Contraseña'
     remember_me: 'Recuerdame'
     company_name: 'Nombre de la compañia'
@@ -63,6 +66,10 @@ es:
     contac: 'Información de contacto'
     address: 'Dirección'
     security: 'Información de seguridad'
+  passwords:
+   new:
+    title: '¿Olvidó su contraseña?'
+    send_me_reset_password_instructions: 'Envíeme las instrucciones para resetear mi contraseña'
   shared:
    links:
     forgot: '¿Olvidó su contraseña?'

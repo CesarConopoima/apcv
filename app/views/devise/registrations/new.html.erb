@@ -6,12 +6,16 @@
   
   <table>
       <tr>
-        <td class ="fieldForm"><%= f.label :email %></td>
-        <td><%= f.email_field :email, :autofocus => true %></td>
-      </tr>
-      <tr>
         <td class ="fieldForm"><%= f.label :username %></td>
         <td><%= f.text_field :username %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"><%= f.label :lastname %></td>
+        <td><%= f.text_field :lastname %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"><%= f.label :email %></td>
+        <td><%= f.email_field :email, :autofocus => true %></td>
       </tr>
   </table>
 
@@ -77,8 +81,5 @@
   
   <div><%= f.submit :class => "button" %></div>
   <% end %>
-  <br/>
-    <div class="link">
-      <%= render "devise/shared/links" %>
-    </div>
+  <br/> <br/> <br/> <br/> <br/> 
 </div>

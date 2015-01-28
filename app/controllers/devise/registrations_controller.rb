@@ -1,6 +1,6 @@
 class Devise::RegistrationsController < DeviseController
-  prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
-  prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
+  prepend_before_filter :require_no_authentication, :only => [:new, :create, :cancel ]
+  prepend_before_filter :authenticate_scope!, :only => [:update, :destroy]
 
   # GET /resource/sign_up
   def new
@@ -63,6 +63,7 @@ class Devise::RegistrationsController < DeviseController
     @productoYork=Product.york
     @products = Product.search(false)
     @cart = current_cart
+
     render :edit
   end
 
@@ -78,6 +79,7 @@ class Devise::RegistrationsController < DeviseController
     @productoYork=Product.york
     @products = Product.search(false)
     @cart = current_cart
+
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
 
@@ -105,6 +107,7 @@ class Devise::RegistrationsController < DeviseController
     @productoYork=Product.york
     @products = Product.search(false)
     @cart = current_cart
+    
     resource.destroy
     Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
     set_flash_message :notice, :destroyed if is_navigational_format?

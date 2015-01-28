@@ -17,6 +17,7 @@ Americanparts::Application.routes.draw do
     resources :users
 
   end
+
   
   resources :line_items do
     put 'erase', on: :member
