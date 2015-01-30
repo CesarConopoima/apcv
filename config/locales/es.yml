@@ -43,9 +43,11 @@ es:
     zipcode: 'Código Zip'
     address: 'Dirección'
     password_confirmation: 'Confirmar la contraseña'
+    current_password: 'Contraseña actual'
    order:
     username: 'Nombre de usuario'
     email: 'Email'
+    country: 'País'
     address: 'Dirección de envió'
     address2: 'Dirección de facturación'
     telephone: 'Telefono'
@@ -66,6 +68,11 @@ es:
     contac: 'Información de contacto'
     address: 'Dirección'
     security: 'Información de seguridad'
+   edit:
+    title: 'Editar datos de usuario'
+    text1: "(Deje en blanco si no desea cambiar su contraseña)"
+    text2: "(Su contraseña actual es necesaria)"
+    erase_account: 'Borrar mi cuenta'
   passwords:
    new:
     title: '¿Olvidó su contraseña?'
@@ -105,11 +112,13 @@ es:
  layouts:
   application:
    product: "Productos"
-   text1: "Entró como "
+   text1: "Bienvenido "
    linkLoggin: "Salir"
    linkCreate: "Crear una cuenta"
    STORE: "TIENDA"
    search: "Consigue nuestro productos"
+   edit: 'Editar usuario'
+   Orders: 'Ordenes'
   menu:
    STORE: "TIENDA"
    HOME: "INICIO"
@@ -158,6 +167,7 @@ es:
    text2: "Información de envío"
    text3: "Información de facturación"
    text4: "Información de pago"
+   text5: "Compañia de envío"
   flash_messages:
     product_was_successfully_created: 'El producto fué creado con éxito'
     product_was_successfully_updated: 'El producto ha sido actulizado'

@@ -27,15 +27,19 @@
 			<p>
 			<span style ="padding-left:15px;">
 			<% if user_signed_in? %>
-			  <%= t('.text1') %> <strong> <%= current_user.email %> </strong>|
+			  <%= t('.text1') %> <strong> <%= current_user.username %> </strong>|
 			  <%= link_to t('.linkLoggin'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-			  <%= link_to "Edit", edit_user_registration_path, :class => 'navbar-link'  %>
+		&nbsp&nbsp&nbsp <i class="fa fa-user" style="font-size:1.25em;"></i> 
+		<%= link_to t('.edit'), edit_user_registration_path, :class => 'navbar-link'  %>
+		&nbsp&nbsp&nbsp <i class="fa fa-cubes" style="font-size:1.25em;"></i>
+		<%= link_to t('.Orders'), store_orderstatus_path, :class => 'navbar-link'  %>
 			<% else %>
 			<%= link_to t('.linkCreate'), new_user_registration_path, :class => 'navbar-link'  %>
 			<% end %>
-			<span style ="float:right;padding-right:100px;">
-			<%= link_to_unless I18n.locale == :en, "English", locale: :en %>&nbsp &nbsp
-			<%= link_to_unless I18n.locale == :es, "Español", locale: :es %>
+			<span style ="float:right;padding-right:70px;">
+			<i class="fa fa-globe" style="font-size:1.7em;"></i>	&nbsp
+			<%= link_to_unless I18n.locale == :en, "EN", locale: :en %>&nbsp
+			<%= link_to_unless I18n.locale == :es, "ES", locale: :es %>
 			</span>
 			</p>
 			<%= render 'devise/sessions/partialnew' %>

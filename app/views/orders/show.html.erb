@@ -1,35 +1,48 @@
 <p id="notice"><%= notice %></p>
+<div class = "show">
+<h1>Order Information</h1>
 
 <p>
-  <b>Username:</b>
+  <b>Email:</b>  <br> <br> <spam class = "color">
+  <%= @order.email %>
+</p>
+<p>
+  <b>Username:</b>  <br> <br> <spam class = "color">
   <%= @order.username %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>Shipping Address:</b> <br> <br> <spam class = "color">
   <%= @order.address %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>Telephone1:</b> <br> <br> <spam class = "color">
   <%= @order.email %>
 </p>
-
 <p>
-  <b>Userid:</b>
-  <%= @order.userid %>
+  <b>Billing address:</b> <br> <br> <spam class = "color">
+  <%= @order.address2 %>
+</p>
+<p>
+  <b>Telephone2:</b> <br> <br> <spam class = "color">
+  <%= @order.telephone2 %>
 </p>
 
 <p>
-  <b>Status:</b>
+  <b>Order Status:</b> <br> <br> <spam class = "color" sytle="color:#e55656">
   <%= @order.status %>
 </p>
-
 <p>
-  <b>Paytype:</b>
+  <b>Shipping Company:</b> <br> <br> <spam class = "color">
+  <%= @order.shipping %>
+</p>
+<p>
+  <b>Payment type:</b> <br> <br> <spam class = "color">
   <%= @order.paytype %>
 </p>
 
+</div>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

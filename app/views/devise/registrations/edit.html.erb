@@ -1,29 +1,51 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class ='title2'><%= t('.title') %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
- <!--  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+ 
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %> -->
+  <% end %> 
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
-
-  <div><%= f.submit "Update" %></div>
+    <table class="editTable">
+      <tr>
+        <td class ="tablefield"><%= f.label :email %></td>
+        <td><%= f.email_field :email, :autofocus => true %></td>
+      </tr>
+      <tr>
+        <td class ="tablefield"><%= f.label :lastname %></td>
+        <td><%= f.text_field :lastname %></td>
+      </tr>
+      <tr>
+        <td class ="tablefield"><%= f.label :name %></td>
+        <td><%= f.text_field :email, :autofocus => true %></td>
+      </tr>
+      <tr>
+        <td class ="tablefield"><%= f.label :address %></td>
+        <td><%= f.text_area :address,:cols => 30, :rows => 6 %></td>
+      </tr>
+      <tr>
+        <td class ="tablefield"><%= f.label :password %> <br><i><%= t('.text1') %></i><br /></td>
+        <td><%= f.password_field :password, :autocomplete => "off" %></td>
+      </tr>
+      <tr>
+        <td class ="tablefield"><%= f.label :password_confirmation %></td>
+        <td><%= f.password_field :password_confirmation %></td>
+      </tr>
+      <tr>
+        <td class ="tablefield"><%= f.label :current_password %><br> <i> <%= t('.text2') %></i></td>
+        <td><%= f.password_field :current_password %></td>
+      </tr>
+      <tr>
+        <td class ="tablefield"></td>
+        <td><%= f.submit "Update",:class =>"buttonUpdate" %></td>
+      </tr>
+  
+  </table>
 <% end %>
 
-<h3>Cancel my account</h3>
+<%= button_to t('.erase_account', :default => "Erase my account"), registration_path(resource_name), :data => { :confirm => "I understand what I'm doing!" }, :method => :delete,:class =>"cancelButton" %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 
-<%= link_to "Back", :back %>
+

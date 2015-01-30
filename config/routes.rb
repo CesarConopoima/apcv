@@ -9,6 +9,7 @@ Americanparts::Application.routes.draw do
     get "store/contact"
     get "store/products"
     get "store/productslist"
+    get "store/orderstatus"
     resources :products
     devise_for :users
     resources :line_items

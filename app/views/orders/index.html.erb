@@ -3,17 +3,16 @@
 <table class="products" width="100%" style="table-layout: fixed; ">
     <col width="100px">
     <col width="100px">
+    <col width="200px">
     <col width="100px">
     <col width="100px">
     <col width="100px">
     <col width="100px">
-    <col width="100px">
-    <col width="100px">
+    
   <tr>
     <th>Username</th>
-    <th>Address</th>
+    <th>Country</th>
     <th>Email</th>
-    <th>Userid</th>
     <th>Status</th>
     <th>Paytype</th>
     <th>Created at</th>
@@ -24,9 +23,8 @@
 <% @orders.each do |order| %>
   <tr>
     <td><%= order.username %></td>
-    <td><%= order.address %></td>
+    <td><%= order.shipping %></td>
     <td><%= order.email %></td>
-    <td><%= order.userid %></td>
     <td><%= order.status %></td>
     <td><%= order.paytype %></td>
     <td><%= order.created_at %></td>

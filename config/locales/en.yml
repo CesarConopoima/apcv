@@ -43,6 +43,7 @@ en:
    order:
     username: 'Username'
     email: 'Email'
+    country: 'Country'
     address: 'Shipping Address'
     address2: 'Billing Address'
     telephone: 'Telephone'
@@ -68,6 +69,10 @@ en:
     contac: 'Contac information'
     security: 'Security information'
     address: 'Address information'
+   edit:
+    title: 'Edit user information'
+    text1: "leave blank if you don\'t want to change it)"
+    text2: "(we need your current password to confirm your changes)"
   passwords:
    new:
     title: 'Forgot your password?'
@@ -107,10 +112,11 @@ en:
  layouts:
   application:
    product: "Products"
-   text1: "Logged in as "
+   text1: "Welcome "
    linkLoggin: "Logout"
    linkCreate: "Create an account"
    STORE: "STORE"
+   edit: 'Edit user'
   menu:
    STORE: "STORE"
    HOME: "HOME"
@@ -160,6 +166,7 @@ en:
    text2: "Shipping information"
    text3: "Billing information"
    text4: "Payment information"
+   text5: "Select your shipping company"
  flash_messages:
   product_was_successfully_created: 'The product was successfully created'
   product_was_successfully_updated: 'The product was successfully updated'

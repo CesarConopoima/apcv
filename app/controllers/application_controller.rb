@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   before_filter :set_locale
-  
   # after_filter :store_location
 
   # def store_location
@@ -23,6 +22,9 @@ class ApplicationController < ActionController::Base
   #   session[:previous_url] || root_path
   # end
   private
+
+  
+
   def current_cart
     Cart.find(session[:cart_id])
     rescue ActiveRecord::RecordNotFound

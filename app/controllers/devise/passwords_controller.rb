@@ -33,6 +33,11 @@ class Devise::PasswordsController < DeviseController
     else
       respond_with(resource)
     end
+
+    if current_user
+      @user = current_user.id
+      @orders = Order.orders(@user) 
+    end
   end
 
   # GET /resource/password/edit?reset_password_token=abcdef
@@ -47,6 +52,11 @@ class Devise::PasswordsController < DeviseController
     @products = Product.search(false)
     self.resource = resource_class.new
     resource.reset_password_token = params[:reset_password_token]
+
+    if current_user
+      @user = current_user.id
+      @orders = Order.orders(@user) 
+    end
   end
 
   # PUT /resource/password
@@ -69,6 +79,11 @@ class Devise::PasswordsController < DeviseController
       respond_with resource, :location => after_resetting_password_path_for(resource)
     else
       respond_with resource
+    end
+
+    if current_user
+      @user = current_user.id
+      @orders = Order.orders(@user) 
     end
   end
 

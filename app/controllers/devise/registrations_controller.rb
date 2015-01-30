@@ -14,6 +14,11 @@ class Devise::RegistrationsController < DeviseController
     @cart = current_cart
     resource = build_resource({})
     respond_with resource
+
+    if current_user
+      @user = current_user.id
+      @orders = Order.orders(@user) 
+    end
   end
 
   # POST /resource
@@ -65,7 +70,7 @@ class Devise::RegistrationsController < DeviseController
     @cart = current_cart
 
     render :edit
-  end
+ end
 
   # PUT /resource
   # We need to use a copy of the resource because we don't want to change
@@ -112,6 +117,7 @@ class Devise::RegistrationsController < DeviseController
     Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
     set_flash_message :notice, :destroyed if is_navigational_format?
     respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+    
   end
 
   # GET /resource/cancel

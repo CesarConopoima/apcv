@@ -9,16 +9,16 @@
 .field {
 	text-align:center;
 }
-.button {
+.buttonUpdate {
 	height: 30px;
 	width: 250px;
 	background:#286e28;
 	border-radius: 5px;
 	color:white;
 	margin-top:20px;
-	margin-left:250px;
+
 }
-.button:hover {
+.buttonUpdate:hover {
 	height: 30px;
 	width: 250px;
 	background: #689968;
@@ -49,4 +49,12 @@ h2 {
 }
 .recaptcha {
 	margin-left:220px;
+}
+
+.tablefield {
+	padding-top:15px;
+	width:300px;
+}
+.editTable{
+	margin-left:100px;
 }

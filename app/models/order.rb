@@ -3,8 +3,15 @@ class Order < ActiveRecord::Base
 
 	validates :username, :address, :email, :paytype, presence: true
 	
-	attr_accessible :username, :address,:email,:paytype,:address2,:telephone1,:telephone2,:shipcountry,:accept
+	attr_accessible :username, :address,:email,:paytype,:address2,:telephone1,:telephone2,:shipcountry,:shipping,:accept
 	
+	SHIPPING_OPTION = ["DHL","FEDEX","UPS"]
+
+	def self.orders(user)
+		where("userid = ?",user)
+	end
+
+
 	def add_line_items_from_cart(cart)
 		cart.line_items.each do |item|
 		item.cart_id = nil

@@ -1,0 +1,7 @@
+<h1>Vea aquí el estatus de sus compras</h1>
+
+<% @orders.each do |order| %>
+	<%= order.created_at %>
+	<%= order.updated_at %>
+<% end %>
+

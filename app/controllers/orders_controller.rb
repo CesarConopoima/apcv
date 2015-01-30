@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
     @order = Order.new
   
     @user = current_user
-    @order.username = @user.username
+    @order.username = @user.username && @user.lastname
     @order.email = @user.email
 
       @cart = current_cart
@@ -94,12 +94,13 @@ class OrdersController < ApplicationController
 
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
+    @order.userid = current_user.id
     
 
     captcha_message = "The data you entered for the CAPTCHA wasn't correct.  Please try again"
     
     if verify_recaptcha
-
+    # @order.user
       respond_to do |format|
         if @order.save
           Cart.destroy(session[:cart_id])
