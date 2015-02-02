@@ -176,9 +176,9 @@ class ProductsController < ApplicationController
   end
 
   def send_promotion_mail
-    @products = params[:products]
+    @products = params[:product]
     PromotionMailer.promotion(@products).deliver
-    flash[:notice] = "Mailer has been sent"
+    flash[:notice] = "Mailer has been sent with #{@products}"
     redirect_to :back
   end
 

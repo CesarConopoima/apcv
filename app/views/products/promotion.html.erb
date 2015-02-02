@@ -11,7 +11,19 @@
 
 </script>
 <h1><%= t('.title') %></h1>
-<%= link_to "Send Order by email", :controller => "products", :action => "send_promotion_mail",:user => current_user,:id => "here commes all can we need to sendEmail",:products => "2040" %>
+
+
+<!--%= text_field_tag :search, params[:product], :class => "searchBar" %-->  
+	<!--form>
+		<input id="product" type="string" name="product" value="" style = "width:200px;">	
+<%= link_to "Send Order by email", :controller => "products", :action => "send_promotion_mail",:user => current_user,:id => "here commes all can we need to sendEmail",:product => "ByDefault" %>
+
+	 </form-->
+
+	<%= form_tag :controller => "products", :action => "send_promotion_mail", :method => 'get' do %>
+		<%= text_field_tag :product, params[:product], :class => "searchBar" %>  
+	    <%= submit_tag "Send Order by email", :product => "ByDefault" %>  
+	 <% end %>
 
 <div class="catalog">
     <% @products.each do |product| %>

@@ -12,6 +12,7 @@ Americanparts::Application.routes.draw do
     get "store/orderstatus"
     get "products/promotion"
     get :send_promotion_mail, to: 'products#send_promotion_mail', as: :send_promotion_mail
+    post :send_promotion_mail, to: 'products#send_promotion_mail', as: :send_promotion_mail
     resources :products
     devise_for :users
     resources :line_items
