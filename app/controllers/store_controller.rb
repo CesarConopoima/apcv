@@ -105,17 +105,6 @@ class StoreController < ApplicationController
     if current_user
       @user = current_user.id
       @orders = Order.orders(@user) 
-
-      @items = []
-      # @products = []
-
-      # @orders.each do |order|
-      #   order.line_items.each do |item|
-      #     @items << item
-      #     @products << Product.find_by_id(item.product_id)
-      #   end
-      # end
-      
     end
   end
 end

@@ -1,0 +1,25 @@
+<%= javascript_include_tag "zoomsl-3.0.min.js" %>
+<script>
+
+	jQuery(function(){
+    	$(".zoomsl").imagezoomsl({
+        	zoomrange: [4,4],
+			magnifiersize: [300,300],
+			magnifiereffectanimate: "fadeIn"
+    	});
+	});
+
+</script>
+<h1><%= t('.title') %></h1>
+<%= link_to "Send Order by email", :controller => "products", :action => "send_promotion_mail",:user => current_user,:id => "here commes all can we need to sendEmail",:products => "2040" %>
+
+<div class="catalog">
+    <% @products.each do |product| %>
+    <div class="names" style="width:175px;float:left;display:inline">
+    <div style ="float:left;"><%= product.name.split("MOD")[0] %></div>
+    <img class="zoomsl" src="<%= image_path(product.imageurl) %>" alt=""/>
+    <div class="bottom" style ="float:left;font-style:italic;font-weight: bold;"><%= product.code %></div>
+    </div>
+<% end %>
+
+</div>

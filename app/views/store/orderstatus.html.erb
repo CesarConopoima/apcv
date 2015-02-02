@@ -1,6 +1,6 @@
 <h1 class="title3"><%= t('.title') %></h1>
-<% if @orders != nil %>
-	
+
+<% if @orders != nil %>	
 <h2 class="title4" ><%= t('.title2') %> Usted tiene <%= @orders.all.count %> ordenes pendientes con nosotros, vea su estatus aquí</h2>
 
 <% @orders.each do |order| %>	

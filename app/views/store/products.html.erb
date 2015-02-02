@@ -1,11 +1,13 @@
+<%= javascript_include_tag "zoomsl-3.0.min.js" %>
 <script>
-	// jQuery(function(){
- //    	$(".zoomsl").imagezoomsl({
- //        	zoomrange: [4,4],
-	// 		magnifiersize: [300,300],
-	// 		magnifiereffectanimate: "fadeIn"
- //    	});
-	// });
+
+	jQuery(function(){
+    	$(".zoomsl").imagezoomsl({
+        	zoomrange: [4,4],
+			magnifiersize: [300,300],
+			magnifiereffectanimate: "fadeIn"
+    	});
+	});
 
 	function cambiarcantidad(objeto) {
 		var product_id = $(objeto).attr('id').split("agregaralcarro")[1];
@@ -14,7 +16,6 @@
 		var accion_nueva = accion.split("quantity=")[0] + "quantity=" + cantidad;
 		$(objeto).parent().parent().attr('action',accion_nueva);
 	}
-	
 </script>
 
 <h1><%= @name.pluralize.capitalize %> <em><%= @marca %> </em> </h1>
@@ -29,7 +30,7 @@
  <% @detailProduct.each do |product| %>
 	<div class="entry">
 		<h4> MOD <%= product.name.split("MOD")[1] %><br> <%= product.code %> <%= product.marc %> <% if user_signed_in? %> &nbsp&nbsp<%= number_to_currency(product.price, :unit=>"$") %> <% end %></h4>
-      	<img alt="" src="<%= image_path(product.imageurl) %>"/>
+      	<img class="zoomsl" src="<%= image_path(product.imageurl) %>" alt=""/>
 		<!-- h4 class="price_line"><%= product.marc %></h4> -->
 		<div class="price_line">
 			<% if user_signed_in? %>

@@ -63,7 +63,7 @@
 <table class="fillTable">
       <tr>
         <td class ="fieldForm"><%= f.label :accept %></td>
-        <td><%= check_box_tag(:accept, :true) %> <%= link_to "Terminos de uso", store_terms_path  %></td>
+        <td><%= check_box("order","accept",{},true,false) %> <%= link_to "Terminos de uso", store_terms_path  %></td>
       </tr>
 </table> 
 

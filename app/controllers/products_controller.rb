@@ -152,4 +152,34 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def promotion
+    @marcas = Product.marcas
+    @productoCop=Product.copeland
+    @productoCarr=Product.carrier
+    @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
+    @cart = current_cart
+
+    #Este condicional es para saber si en que vista se encuentra
+    if params[:search] == nil 
+      @products = Product.all
+    else
+      @products = Product.search(params[:search])
+    end 
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @products }
+    end
+  end
+
+  def send_promotion_mail
+    @products = params[:products]
+    PromotionMailer.promotion(@products).deliver
+    flash[:notice] = "Mailer has been sent"
+    redirect_to :back
+  end
+
 end
