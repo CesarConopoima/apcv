@@ -255,4 +255,28 @@ $radius: 20px;
   }
 }
 
+.title3 {
+  margin-left:80px;
+}
+.title4 {
+    padding-left:100px;
+    color:#09202f;
+  }
 
+.tabOrder {
+  margin-left:100px;
+  margin-top:30px;
+  border-style: solid;
+  border-radius: 20px;
+  width:80%;
+    .orderTitle {
+      color:#09202f;
+      margin-left:40px;
+    }
+    p{
+      padding-left:40px;
+    }
+    .OrderDetailTable {
+      width:100%;
+    }
+  }

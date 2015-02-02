@@ -99,7 +99,7 @@ class OrdersController < ApplicationController
 
     captcha_message = "The data you entered for the CAPTCHA wasn't correct.  Please try again"
     
-    if verify_recaptcha
+    # if verify_recaptcha
     # @order.user
       respond_to do |format|
         if @order.save
@@ -114,10 +114,10 @@ class OrdersController < ApplicationController
         end
       end
 
-    else
-      flash.now[:alert] = captcha_message
-      render :new
-    end
+    # else
+    #   flash.now[:alert] = captcha_message
+    #   render :new
+    # end
 
   end
 

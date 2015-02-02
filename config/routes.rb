@@ -16,7 +16,6 @@ Americanparts::Application.routes.draw do
     resources :carts
     resources :orders
     resources :users
-
   end
 
   

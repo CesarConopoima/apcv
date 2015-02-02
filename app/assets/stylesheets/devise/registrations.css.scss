@@ -24,17 +24,35 @@
 	background: #689968;
 	border-radius: 5px;
 }
-.fieldForm {
-	width:250px;
-}
+.buttonCreateUser {
+	height: 30px;
+	width: 250px;
+	background:#286e28;
+	border-radius: 5px;
+	color:white;
+	margin-top:20px;
 
+}
+.buttonCreateUser:hover {
+	height: 30px;
+	width: 250px;
+	background: #689968;
+	border-radius: 5px;
+}
 .form-control {
 	width:250px;
 }
 
 h3 {
-	margin-top:30px;
-	margin-left:50px;
+	margin-top:10px;
+	margin-left:100px;
+}
+
+.title2 {
+	margin-left:100px;
+	margin-top:50px;
+  	height:30px;
+    line-height:130%;
 }
 
 h2 {
@@ -47,9 +65,7 @@ h2 {
 	paddin-top:100px;
 	font-size:1.5em;
 }
-.recaptcha {
-	margin-left:220px;
-}
+
 
 .tablefield {
 	padding-top:15px;
@@ -57,4 +73,10 @@ h2 {
 }
 .editTable{
 	margin-left:100px;
+}
+.fieldForm {
+	width:250px;
+}
+.InputField {
+	width:300px
 }

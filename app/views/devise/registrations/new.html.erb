@@ -1,85 +1,80 @@
-<h2><i class="fa fa-user"></i> <%= t('.title') %></h2>
-<div class = "createuser">
+<h2 class="title2"><i class="fa fa-user"></i> <%= t('.title') %></h2>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 <h3> <i class="fa fa-info"></i> <%= t('.personal') %></h3>
   
-  <table>
+  <table class="editTable">
       <tr>
         <td class ="fieldForm"><%= f.label :username %></td>
-        <td><%= f.text_field :username %></td>
+        <td class ="InputField"><%= f.text_field :username %></td>
       </tr>
       <tr>
         <td class ="fieldForm"><%= f.label :lastname %></td>
-        <td><%= f.text_field :lastname %></td>
+        <td class ="InputField"><%= f.text_field :lastname %></td>
       </tr>
       <tr>
         <td class ="fieldForm"><%= f.label :email %></td>
-        <td><%= f.email_field :email, :autofocus => true %></td>
+        <td class ="InputField"><%= f.email_field :email, :autofocus => true %></td>
       </tr>
   </table>
 
 <h3><i class="fa fa-info"></i> <%= t('.contac') %></h3>
-  <table>
+  <table class="editTable">
     <tr>
       <td class ="fieldForm"><%= f.label :company_name %></td>
-      <td><%= f.text_field :companyname %></td>
+      <td class ="InputField"><%= f.text_field :companyname %></td>
     </tr>
     <tr>
       <td class ="fieldForm"><%= f.label :telephone %></td>
-      <td><%= f.text_field :telephone %></td>
+      <td class ="InputField"><%= f.text_field :telephone %></td>
     </tr>
      <tr>
       <td class ="fieldForm"><%= f.label :fax %></td>
-      <td><%= f.text_field :fax %></td>
+      <td class ="InputField"><%= f.text_field :fax %></td>
     </tr>
   </table>
 
   <h3><i class="fa fa-info"></i> <i class="fa fa-globe"></i> <%= t('.address') %></h3>
-  <table>
+  <table class="editTable">
     <tr>
-    <td class ="fieldForm"><%= f.label :country %></td>
-      <td><%= country_select("user", "country" , { priority_countries: ["US", "CL","CO","BR","PE","EC","VE"], selected: "US" },{ class: 'form-control', data: { attribute: "value" } }) %></td>
+      <td class ="fieldForm"><%= f.label :country %></td>
+      <td class ="InputField"><%= country_select("user", "country" , { priority_countries: ["US", "CL","CO","BR","PE","EC","VE"], selected: "US" },{ class: 'form-control', data: { attribute: "value" } }) %></td>
     </tr>
     <tr>
       <td class ="fieldForm"><%= f.label :city %></td>
-      <td><%= f.text_field :city %></td>
+      <td class ="InputField"><%= f.text_field :city %></td>
     </tr>
     <tr>
       <td class ="fieldForm"><%= f.label :stateprovince %></td>
-      <td><%= f.text_field :stateprovince %></td>
+      <td class ="InputField"><%= f.text_field :stateprovince %></td>
     </tr>
     <tr>
       <td class ="fieldForm"><%= f.label :zipcode %></td>
-      <td><%= f.text_field :zipcode %></td>
+      <td class ="InputField"><%= f.text_field :zipcode %></td>
     </tr>
     <tr>
       <td class ="fieldForm"><%= f.label :address %></td>
-      <td><%= f.text_area :address, :cols => 30, :rows => 6 %></td>
+      <td class ="InputField"><%= f.text_area :address, :cols => 30, :rows => 6 %></td>
     </tr>
   </table>
     
 <h3><i class="fa fa-info"></i> <%= t('.security') %></h3>
-  <table>
+  <table class="editTable">
     <tr>
       <td class ="fieldForm"><%= f.label :password %></td>
-      <td><%= f.password_field :password %></td>
+      <td class ="InputField"><%= f.password_field :password %></td>
     </tr>
     <tr>
       <td class ="fieldForm"><%= f.label :password_confirmation %></td>
-      <td><%= f.password_field :password_confirmation %></td>
+      <td class ="InputField"><%= f.password_field :password_confirmation %></td>
+    </tr>
+    <tr>
+      <td class ="fieldForm"></td>
+      <td class ="InputField"><%= recaptcha_tags :display => { :theme => "white" } %></td>
+    </tr>
+    <tr>
+      <td class ="fieldForm"></td>
+      <td class ="InputField"><%= f.submit :class => "buttonCreateUser" %></td>
     </tr>
   </table>
-
-<!-- <div class="g-recaptcha" data-sitekey="6LfobQATAAAAAK5MSRwagq5H6nMYfjWQcyHyV1Bb"></div> -->
-<!-- this maybe change when new version of recaptcha is launched -->
-  <div class="recaptcha">
-    <br/>
-    <%= recaptcha_tags :display => { :theme => "white" } %>
-    <br/> 
-  </div>
-  
-  <div><%= f.submit :class => "button" %></div>
-  <% end %>
-  <br/> <br/> <br/> <br/> <br/> 
-</div>
+<% end %>

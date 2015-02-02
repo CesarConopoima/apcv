@@ -86,6 +86,16 @@ es:
    title: "Consiga el producto de su marca favorita"
    searchsubmit: "Buscar"
    search: "Consigua nuestro productos"
+  orderstatus:
+   title: "Chequea el estatus de tus ordenes"
+   code: "Código"
+   price: "Precio"
+   product: "Producto"
+   quantity: "Cantidad"
+   order_details: "Detalles de la orden"
+   total_price: "Precio total"
+   created_at: "Creada el"
+   title2: "Usted tiene ordenes pendientes con nosotros, vea su estatus aquí"
   home:
    title: "Nuestro negocio son los repuestos de compresores"
    subtitle: "Encuentre los repuestos de sus marcas favoritas"
@@ -102,6 +112,8 @@ es:
    title: "Products"
    searchsubmit: "Buscar"
    search: "Consigua nuestro productos"
+  orderstatus:
+   title: "Chequea el estatus de tu orden"
  carts:
   cart:
    title: 'Tu carro de compras'
@@ -171,21 +183,3 @@ es:
   flash_messages:
     product_was_successfully_created: 'El producto fué creado con éxito'
     product_was_successfully_updated: 'El producto ha sido actulizado'
-
-
-
- # activerecord:
- #  models:
- #   product: 'Producto'
- #    attributes:
- #     product:
- #      name: 'Nombre'
- #      code: 'Código'
- #      marc: 'Marca'
- #      quantity: 'Cantidad'
- #      price: 'Precio'
- #      imageurl: 'ImageUrl'
- #      model: 'Modelo'
- #      addedimageurl: 'Foto_Cargada'
- #      created_at: 'Creado'
- #      updated_at: 'Actualizado'

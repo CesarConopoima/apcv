@@ -81,6 +81,8 @@ en:
     forgot: 'Forgot your password?'
     confirmation: 'Didn''t receive confirmation instructions?'
  store:
+  orderstatus:
+   title: "Check the status of your Order"
   index:
    title: "Select the product of your favority brand"
    searchsubmit: "Search" 
@@ -101,6 +103,8 @@ en:
    title: "Products"
    searchsubmit: "Search"
    search: "Search our products"
+  orderstatus:
+   title: "Check your order status"
  carts:
   cart:
    title: 'Your shopping cart'

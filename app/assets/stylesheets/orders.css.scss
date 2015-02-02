@@ -17,9 +17,21 @@
 }
 
 .button {
+	height: 30px;
+	width: 250px;
+	background:#286e28;
+	border-radius: 5px;
+	color:white;
+	margin-top:20px;
 	margin-left:300px;
 }
 
+.button:hover {
+	height: 30px;
+	width: 250px;
+	background: #689968;
+	border-radius: 5px;
+}
 .show {
 	padding-top:20px;
 	padding-left:20px;

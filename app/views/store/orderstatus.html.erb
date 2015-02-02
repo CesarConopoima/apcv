@@ -1,7 +1,47 @@
-<h1>Vea aquí el estatus de sus compras</h1>
+<h1 class="title3"><%= t('.title') %></h1>
+<% if @orders != nil %>
+	
+	<h2 class="title4" ><%= t('.title2') %></h2>
 
-<% @orders.each do |order| %>
-	<%= order.created_at %>
-	<%= order.updated_at %>
+<% @orders.each do |order| %>	
+	<div class="tabOrder">
+	<h3 class="orderTitle"><%= t('.order_details') %></h3>
+	<p> <%= t('.created_at') %>:  <%= order.created_at %>	<br>
+		<%= t('.status') %>: <%= order.status %> <br>
+	<table class="OrderDetailTable">	
+		<tr>
+			<th><%= t('.code') %></th>
+			<th><%= t('.product') %></th>
+			<th><%= t('.quantity') %></th>
+			<th><%= t('.price') %></th>
+		</tr>
+		<% price = 0 %>
+		<% order.line_items.each do |items| %>
+		<% product = Product.find_by_id(items.product_id) %>
+		<% price +=  items.quantity*product.price %>
+		<tr>
+			<td><%= product.code %></td>
+			<td><%= product.name %></td>
+			<td><%= items.quantity %></td> 
+			<td><%= number_to_currency(items.quantity*product.price) %></td>
+		</tr>			
+	<% end %>
+		<tr>
+			<td></td>
+			<td></td>
+			<td><%= t('.total_price') %></td>
+			<td><%= number_to_currency(price) %></td>
+		</tr>
+	</table>
+	</p>
+	</div>
 <% end %>
+<% else %>
+<p> Usted no posée compras en proceso con nosotros.</p>
+<% end %>
+
+
+
+
+
 
