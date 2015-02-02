@@ -177,8 +177,14 @@ class ProductsController < ApplicationController
 
   def send_promotion_mail
     @products = params[:product]
-    PromotionMailer.promotion(@products).deliver
-    flash[:notice] = "Mailer has been sent with #{@products}"
+    @img = ""
+      @products.split(",").each do |code|
+        @Producto = Product.findproductbycode(code)[0] 
+        @img << @Producto.imageurl
+      end
+
+    PromotionMailer.promotion(@img).deliver
+    flash[:notice] = "Mailer has been sent with the following products #{@img}"
     redirect_to :back
   end
 

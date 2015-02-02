@@ -67,6 +67,9 @@ class Product < ActiveRecord::Base
   	def self.detailproductlist(brand)
   		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc ='#{brand}' group by names order by names")
   	end
+  	def self.findproductbycode(code)
+  		where("code = ?",code)
+  	end
 
  	 	
 private
