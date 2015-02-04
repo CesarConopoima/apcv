@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 	validates :name, :code, :marc,:quantity, :price,:imageurl,:model,:flagmis, presence: true
 	validates :price, numericality: {greater_than_or_equal_to: 0.1}
 	validates :code, uniqueness: true
-	
+
 	validates :imageurl, allow_blank: true, format: {
 		with: %r{\.(gif|jpg|png)$}i,
 		message: 'La imagen debe tener extension JPG,GIF o PNG'
@@ -15,10 +15,8 @@ class Product < ActiveRecord::Base
 	    square: '200x200#',
 	    medium: '300x300>'
   	}
-  	validates :attachedimg, allow_blank: true, format: {
-		with: %r{\.(gif|jpg|png)$}i,
-		message: 'La imagen agregada debe tener extension JPG,GIF o PNG'
-		}
+
+  	validates_attachment_content_type :attachedimg, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 
 
