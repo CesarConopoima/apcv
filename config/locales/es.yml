@@ -57,9 +57,10 @@ es:
   submit:
    user:
     create: 'Crear cuenta'
+    sign_in: "Entrar"
    order:
     create: 'Completar la orden' 
-    new: 'Completar la orden' 
+    new: 'Completar la orden'
  devise:
   registrations:
    new:
@@ -81,6 +82,9 @@ es:
    links:
     forgot: '¿Olvidó su contraseña?'
     confirmation: '¿No recibió las instrucciones de confirmación?'
+  sessions:
+   new:
+    Sing_in: "Entrar"
  store:
   index:
    title: "Consiga el producto de su marca favorita"

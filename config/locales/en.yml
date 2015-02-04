@@ -52,6 +52,7 @@ en:
     accept: 'Terms and conditions'
   submit:
    user:
+    sign_in: "Sing In"
     registrations:
      new:
       create: 'Create account'
@@ -80,6 +81,9 @@ en:
    links:
     forgot: 'Forgot your password?'
     confirmation: 'Didn''t receive confirmation instructions?'
+  sessions:
+   new:
+    Sing_in: "Entrar"
  store:
   orderstatus:
    title: "Check the status of your Order"
