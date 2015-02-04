@@ -29,10 +29,14 @@
     <% @products.each do |product| %>
     <div class="names" style="width:175px;float:left;display:inline">
     <div style ="float:left;"><%= product.name.split("MOD")[0] %></div>
+    	<% if product.attachedimg.url.include?("missing.png") %>
     <img class="zoomsl" src="<%= image_path(product.imageurl) %>" alt=""/>
-   	<%= image_tag product.attachedimg.url(:medium),:class => 'catalogo' %>
+    	<% else %>
+   	<%= image_tag product.attachedimg.url(:medium),:class => 'zoomsl' %>
+   		<% end %>
     <div class="bottom" style ="float:left;font-style:italic;font-weight: bold;"><%= product.code %></div>
     </div>
 <% end %>
 
 </div>
+

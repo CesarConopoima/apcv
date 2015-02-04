@@ -16,8 +16,7 @@ class Product < ActiveRecord::Base
 	    medium: '300x300>'
   	}
 
-  	validates_attachment_content_type :attachedimg, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-
+  	validates_attachment :attachedimg, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }, :size => { :in => 0..3000.kilobytes }
 
 
 
@@ -29,7 +28,7 @@ class Product < ActiveRecord::Base
 	     if search  
 	     	if search.include?("copeland") or search.include?("Copeland") 
 	     		@product = search.gsub("copeland","").gsub("Copeland","")
-	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}k%","Copeland",)  
+	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}%","Copeland",)  
 	     	elsif search.include?("carrier") or search.include?("Carrier")
 	     		@product = search.gsub("carrier","").gsub("Carrier","")
 	     		where('name LIKE ? and marc LIKE ?',"%#{@product.upcase}%","Carrier",)  

@@ -30,21 +30,14 @@
  <% @detailProduct.each do |product| %>
 	<div class="entry">
 		<h4> MOD <%= product.name.split("MOD")[1] %><br> <%= product.code %> <%= product.marc %> <% if user_signed_in? %> &nbsp&nbsp<%= number_to_currency(product.price, :unit=>"$") %> <% end %></h4>
-      	<img class="zoomsl" src="<%= image_path(product.imageurl) %>" alt=""/>
-		<!-- h4 class="price_line"><%= product.marc %></h4> -->
-		<div class="price_line">
-			<% if user_signed_in? %>
-			<!-- <div class="price"><%= number_to_currency(product.price, :unit=>"$") %></div> -->
-			<!-- <div class="price">Disponible</div>	 -->
-			<div class="price">
-			<!-- <form>
-  			<input id="cantidad<%= product.id %>" type="number" name="quantity" value=1 style = "width:40px;">	
-  			</form> -->
-  			</div>
-			<% else %>
-			<!-- <div class="price">Disponible</div>	 -->
-			<% end %>
-		</div>
+      	
+      	<% if product.attachedimg.url.include?("missing.png") %>
+   		<img class="zoomsl" src="<%= image_path(product.imageurl) %>" alt=""/>
+    	<% else %>
+   		<%= image_tag product.attachedimg.url(:medium),:class => 'zoomsl' %>
+   		<% end %>
+		
+		
 		<div class="bottom"><h5><%= product.name.split("MOD")[0] %></h5></div>
 		<% if user_signed_in? %>
 		<div class="bottom">
