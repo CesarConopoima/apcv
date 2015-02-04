@@ -40,6 +40,11 @@ gem 'thin'
 gem 'devise','~> 2.2.8'
 
 gem "font-awesome-rails"
+
+gem 'paperclip'
+
+gem 'aws-sdk'
+
 #gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

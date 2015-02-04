@@ -30,6 +30,7 @@
     <div class="names" style="width:175px;float:left;display:inline">
     <div style ="float:left;"><%= product.name.split("MOD")[0] %></div>
     <img class="zoomsl" src="<%= image_path(product.imageurl) %>" alt=""/>
+   	<%= image_tag product.attachedimg.url(:medium),:class => 'catalogo' %>
     <div class="bottom" style ="float:left;font-style:italic;font-weight: bold;"><%= product.code %></div>
     </div>
 <% end %>

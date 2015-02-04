@@ -4,8 +4,8 @@ class PromotionMailer < ActionMailer::Base
   def promotion(imgs)
   	#normally products should come as string to make db call smt like 
   	#beware to send mail only to users that has accepted to receive it
-  	#@rootURL = request.host
-  	attachments.inline['image.jpg'] = File.read(Rails.root.join(imgs))
+  	@rootURL = URI(root_url).to_s
+  	attachments.inline['image.jpg'] = File.read(@rootURL+"/"+imgs)
 
   	mail(to: "cesar.conopoima@gmail.com", subject: "This are promotions from this month")
   end

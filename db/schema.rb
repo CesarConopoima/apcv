@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150128195447) do
+ActiveRecord::Schema.define(:version => 20150204162307) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -53,10 +53,14 @@ ActiveRecord::Schema.define(:version => 20150128195447) do
     t.string   "imageurl"
     t.string   "model"
     t.string   "addedimageurl"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
     t.string   "flagmis"
     t.string   "flagprom"
+    t.string   "attachedimg_file_name"
+    t.string   "attachedimg_content_type"
+    t.integer  "attachedimg_file_size"
+    t.datetime "attachedimg_updated_at"
   end
 
   create_table "users", :force => true do |t|

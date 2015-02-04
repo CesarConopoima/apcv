@@ -3,22 +3,24 @@ Americanparts::Application.routes.draw do
   # get "page/index"
   scope "(:locale)", :locale => /en|es/ do
     root :to => 'store#home'
-    get "store/index"
-    get "store/home"
-    get "store/terms"
-    get "store/contact"
-    get "store/products"
-    get "store/productslist"
-    get "store/orderstatus"
-    get "products/promotion"
-    get :send_promotion_mail, to: 'products#send_promotion_mail', as: :send_promotion_mail
+    # get :send_promotion_mail, to: 'products#send_promotion_mail', as: :send_promotion_mail
     post :send_promotion_mail, to: 'products#send_promotion_mail', as: :send_promotion_mail
+    get "products/promotion"
     resources :products
     devise_for :users
     resources :line_items
     resources :carts
     resources :orders
     resources :users
+    get "store/index"
+    get "store/home"
+    get "store/terms"
+    get "store/contact"
+    get "store/products"
+    get "store/productslist"
+    # post "store/productslist*"
+    get "store/orderstatus"
+    
   end
 
   

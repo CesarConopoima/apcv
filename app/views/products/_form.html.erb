@@ -45,8 +45,8 @@
         <td class ="fillInput"><%= f.select :flagmis, Product::MISCELANEUS, prompt: t('.promtmisce') %></td>
       </tr>
       <tr>
-        <td class ="fieldForm"><%= f.label :addedimageurl, t('.imgurladd') %></td>
-        <td class ="fillInput"><%= f.text_field :addedimageurl %></td>
+        <td class ="fieldForm"><%= f.label :attachedimg, t('.attachedimg') %></td>
+        <td class ="fillInput"><%= f.file_field :attachedimg %></td>
       </tr>
       <tr>
         <td class ="fieldForm"><%= f.label :prom, t('.prom') %></td>

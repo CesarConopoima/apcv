@@ -168,7 +168,7 @@ ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
 	<% end %>
 			<% @marcas.each do |producto| %>
 		<li class="drop">
-			<%= link_to producto.marc.upcase, store_productslist_path(:marca => producto.marc), :class => "topmenu" %>
+			<%= link_to producto.marc.upcase, store_productslist_path(:marca => producto.marc,locale: I18n.locale), :class => "topmenu" %>
 			<div class="dropdownContain">
 				<div class="dropOut">
 					<div class="triangle"></div>
