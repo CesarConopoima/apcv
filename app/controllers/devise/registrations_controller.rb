@@ -1,6 +1,6 @@
 class Devise::RegistrationsController < DeviseController
   prepend_before_filter :require_no_authentication, :only => [:new, :create, :cancel ]
-  prepend_before_filter :authenticate_scope!, :only => [:update, :destroy]
+  prepend_before_filter :authenticate_scope!, :only => [:destroy]
 
   # GET /resource/sign_up
   def new
@@ -88,7 +88,7 @@ class Devise::RegistrationsController < DeviseController
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
 
-    if resource.update_with_password(resource_params)
+    if resource.update_with_password(resource_params) 
       if is_navigational_format?
         flash_key = update_needs_confirmation?(resource, prev_unconfirmed_email) ?
           :update_needs_confirmation : :updated
