@@ -33,7 +33,7 @@
   position:relative;
   display:inline;
   float: left;
-  width:25%;
+  width:55%;
   height: 110px;
   background: white;
 }
@@ -142,3 +142,9 @@ div .login{
   padding-left: 50px;
 }
 
+.logo {
+  position:absolute;
+  margin-left: 200px;
+  float:left;
+  width:250px;
+}
