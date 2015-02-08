@@ -5,7 +5,10 @@ class Order < ActiveRecord::Base
 
 	validates :accept, acceptance: { accept: true }
 
-	attr_accessible :username, :address,:email,:paytype,:address2,:telephone1,:telephone2,:shipcountry,:shipping,:accept
+	attr_accessible :username, :address,:email,
+	:paytype,:address2,
+	:telephone1,:telephone2,
+	:shipcountry,:shipping,:accept
 	
 	SHIPPING_OPTION = ["DHL","FEDEX","UPS"]
 

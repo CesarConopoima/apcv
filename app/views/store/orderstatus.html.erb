@@ -18,7 +18,7 @@
 		<% price = 0 %>
 		<% order.line_items.each do |items| %>
 		<% product = Product.find_by_id(items.product_id) %>
-		<% price +=  items.quantity*product.price %>
+		<% price +=  items.quantity*product.price %> 	
 		<tr>
 			<td><%= product.code %></td>
 			<td><%= product.name %></td>

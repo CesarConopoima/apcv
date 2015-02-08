@@ -53,14 +53,27 @@ class OrdersController < ApplicationController
     @order = Order.new
   
     @user = current_user
-    @order.username = @user.username && @user.lastname
+    @order.username = @user.username.to_s + " " +@user.lastname.to_s
     @order.email = @user.email
+    @order.telephone1 = @user.telephone
+    @order.address = @user.address
+    # @order.shipcountry = @user.country
 
       @cart = current_cart
-      if @cart.line_items.empty?
-        redirect_to store_index_path, notice: "Your cart is empty"
+      
+      @flag = false
+      @cart.line_items.each do |item|
+        if item.quantity < 0
+          @flag = true
+        end  
+      end
+
+      if @cart.line_items.empty? || @flag == true
+        redirect_to store_index_path, notice: "Your cart is empty or has products with negative prices"
         return
       end
+    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @order }
@@ -95,7 +108,6 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
     @order.userid = current_user.id
-    
 
     captcha_message = "The data you entered for the CAPTCHA wasn't correct.  Please try again"
     

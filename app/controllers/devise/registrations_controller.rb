@@ -1,6 +1,6 @@
 class Devise::RegistrationsController < DeviseController
   prepend_before_filter :require_no_authentication, :only => [:new, :create, :cancel ]
-  prepend_before_filter :authenticate_scope!, :only => [:destroy]
+  # prepend_before_filter :authenticate_scope!, :only => [:destroy]
 
   # GET /resource/sign_up
   def new
@@ -113,10 +113,34 @@ class Devise::RegistrationsController < DeviseController
     @products = Product.search(false)
     @cart = current_cart
     
-    resource.destroy
-    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
-    set_flash_message :notice, :destroyed if is_navigational_format?
-    respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+    # resource.destroy
+    # Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
+    # set_flash_message :notice, :destroyed if is_navigational_format?
+    # respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+    
+
+    @user = current_user
+    begin
+      #here some logic to avoid elimination of clients with pending orders.
+      if Order.orders(@user.id).count == 0
+        @user.destroy
+        respond_to do |format|
+          format.html { redirect_to root_path, notice: 'Your account was eliminate' }
+          format.json { head :no_content }
+        end
+      else
+          respond_to do |format|
+          format.html { redirect_to :back, notice: "Your account can't be eliminated, you have pendding orders" }
+          format.json { head :no_content }
+        end
+      end
+    rescue RuntimeError
+      respond_to do |format|
+        format.html { redirect_to :back, notice: "You can't eliminate admin" }
+        format.json { head :no_content }
+      end
+    end
+
     
   end
 
@@ -171,7 +195,9 @@ class Devise::RegistrationsController < DeviseController
 
   # Authenticates the current scope and gets the current resource from the session.
   def authenticate_scope!
-    send(:"authenticate_#{resource_name}!", :force => true)
-    self.resource = send(:"current_#{resource_name}")
+    # send(:"authenticate_#{resource_name}!", :force => true)
+    # self.resource = send(:"current_#{resource_name}")
+    send(:"authenticate_user!", :force => true)
+    self.resource = send(:"current_user")
   end
 end
