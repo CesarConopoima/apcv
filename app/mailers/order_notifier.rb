@@ -5,6 +5,6 @@ class OrderNotifier < ActionMailer::Base
   	@order 	= order
   	@user 	= user
   	email = order.email
-  	mail(to: email, subject: 'Order confirmation')
+  	mail(to: "cesar.conopoima@gmail.com", subject: "Order confirmation")
   end
 end
