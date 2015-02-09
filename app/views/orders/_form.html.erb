@@ -24,7 +24,7 @@
 <table class="fillTable">
       <tr>
         <td class ="fieldForm"><%= f.label :country %></td>
-        <td><%= country_select("user", "country" , { priority_countries: ["US", "CL","CO","BR","PE","EC","VE"], selected: "US" },{ class: 'formControl', data: { attribute: "value" } }) %></td>
+        <td><%= country_select("order", "shipcountry" , { priority_countries: ["US", "CL","CO","BR","PE","EC","VE"], selected: "US" },{ class: 'formControl', data: { attribute: "value" } }) %></td>
       </tr>
       <tr>
         <td class ="fieldForm"><%= f.label :address %></td>
@@ -39,7 +39,7 @@
 <table class="fillTable">
       <tr>
         <td class ="fieldForm"><%= f.label :address2 %></td>
-        <td><%= f.text_area :address2,:cols => 30, :rows => 6  %></td>
+        <td><%= f.text_area :address2 ,:cols => 30, :rows => 6  %></td>
       </tr>
       <tr>
         <td class ="fieldForm"><%= f.label :telephone2 %></td>
@@ -53,12 +53,6 @@
         <td><%= f.select :shipping, Order::SHIPPING_OPTION, 
     prompt: t('.text5'), :class => 'formControl'  %></td>
       </tr>
-       
-      <tr>
-        <td class ="fieldForm"> <%= f.label :paytype %></td>
-        <td><%= f.text_field :paytype %></td>
-      </tr>
-
 </table> 
 <table class="fillTable">
       <tr>

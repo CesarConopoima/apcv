@@ -18,6 +18,7 @@ Americanparts::Application.routes.draw do
     get "store/contact"
     get "store/products"
     get "store/productslist"
+    get "store/payinfo"
     # post "store/productslist*"
     get "store/orderstatus"
     

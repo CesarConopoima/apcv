@@ -107,4 +107,18 @@ class StoreController < ApplicationController
       @orders = Order.orders(@user) 
     end
   end
+
+  def payinfo
+    @order = Order.find(params[:id])
+    @billing = params[:bill]
+    @marcas = Product.marcas
+    @productoCop=Product.copeland
+    @productoCarr=Product.carrier
+    @productoBit=Product.bitzer
+    @productoTra=Product.trane
+    @productoYork=Product.york
+    @products = Product.search(params[:search])
+    @cart = current_cart
+    
+  end
 end

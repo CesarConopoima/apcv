@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_filter :ensure_common!, only: [:index,:show,:edit,:update,:destroy]
+  before_filter :ensure_common!, only: [:index,:show,:edit]
   # GET /orders
   # GET /orders.json
   def index
@@ -117,7 +117,9 @@ class OrdersController < ApplicationController
         if @order.save
           Cart.destroy(session[:cart_id])
           session[:cart_id] = nil
-          format.html { redirect_to store_index_path, notice: 'Thank you for your order.' }
+          format.html { redirect_to store_index_path, notice: "Thank you for your order!. 
+            You will receive a confirmation email. Please complete your payment information 
+            in your account's order section." }
           format.json { render json: @order, status: :created, location: @order }
         else
           @cart = current_cart
@@ -149,7 +151,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to store_orderstatus_path, notice: 'Your order was successfully updated, an email has been sent' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -174,7 +176,7 @@ class OrdersController < ApplicationController
     @order.destroy
 
     respond_to do |format|
-      format.html { redirect_to orders_url }
+      format.html { redirect_to :back, notice: 'Your order has been canceled' }
       format.json { head :no_content }
     end
   end

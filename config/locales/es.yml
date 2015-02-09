@@ -184,6 +184,7 @@ es:
    text3: "Información de facturación"
    text4: "Información de pago"
    text5: "Compañia de envío"
+   text6: "Tipo de pago"
   flash_messages:
     product_was_successfully_created: 'El producto fué creado con éxito'
     product_was_successfully_updated: 'El producto ha sido actulizado'

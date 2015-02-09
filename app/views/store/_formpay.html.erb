@@ -1,0 +1,37 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h3><i class="fa fa-usd"></i> <%= t('.text4') %></h3>
+<table class="fillTable">
+      <tr>
+        <td class ="fieldForm"> <%= f.label :paytype %></td>
+        <td><%= f.select :paytype, Order::PAYMENT_TYPES, 
+    prompt: 'Payment Information', :class => 'formControl' %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"> <%= f.label :bankname %></td>
+        <td><%= f.text_field :bankname %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"> <%= f.label :refernumber %></td>
+        <td><%= f.text_field :refernumber %></td>
+      </tr>
+      <tr>
+        <td class ="fieldForm"> <%= f.label :bankinformation %></td>
+        <td><%= f.text_area :bankinformation,:cols => 30, :rows => 6 %></td>
+      </tr>
+
+</table> 
+
+<div class="actions">
+    <%= f.submit :class => "button" %>  
+</div>
+<% end %>

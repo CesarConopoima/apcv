@@ -1,7 +1,10 @@
-<h1 class="title3"><%= t('.title') %></h1>
-
-<% if @orders != nil %>	
-<h2 class="title4" ><%= t('.title2') %> Usted tiene <%= @orders.all.count %> ordenes pendientes con nosotros, vea su estatus aquí</h2>
+<% if notice || alert %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% end %>
+<h1 class="title3"><%= t('.title') %></h1><br>
+	
+<h2 class="title4" >You have <%= @orders.all.count %> pendding orders with us.</h2>
 
 <% @orders.each do |order| %>	
 	<div class="tabOrder">
@@ -17,15 +20,15 @@
 		</tr>
 		<% price = 0 %>
 		<% order.line_items.each do |items| %>
-		<% product = Product.find_by_id(items.product_id) %>
-		<% price +=  items.quantity*product.price %> 	
-		<tr>
-			<td><%= product.code %></td>
-			<td><%= product.name %></td>
-			<td><%= items.quantity %></td> 
-			<td><%= number_to_currency(items.quantity*product.price) %></td>
-		</tr>			
-	<% end %>
+			<% product = Product.find_by_id(items.product_id) %>
+			<% price +=  items.quantity*product.price %> 	
+			<tr>
+				<td><%= product.code %></td>
+				<td><%= product.name %></td>
+				<td><%= items.quantity %></td> 
+				<td><%= number_to_currency(items.quantity*product.price) %></td>
+			</tr>			
+		<% end %>
 		<tr>
 			<td></td>
 			<td></td>
@@ -34,11 +37,14 @@
 		</tr>
 	</table>
 	</p>
+		<div class="links">
+		<i class="fa fa-usd" id="fausd"></i> <%= link_to "Payment Information", store_payinfo_path(id: order.id, bill: price), :class => 'linkPayment'%>
+		&nbsp&nbsp&nbsp&nbsp
+		<i class="fa fa-eraser" id="faerase"></i> <%= link_to "Cancel order", order, confirm: 'Are you sure, you want to erase your order?',method: :delete, :class => 'linkErase'  %>
+		</div>
 	</div>
 <% end %>
-<% else %>
-<p> Usted no posée compras en proceso con nosotros.</p>
-<% end %>
+
 
 
 

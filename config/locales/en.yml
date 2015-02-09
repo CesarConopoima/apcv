@@ -175,6 +175,7 @@ en:
    text3: "Billing information"
    text4: "Payment information"
    text5: "Select your shipping company"
+   text6: "Payment type"
  flash_messages:
   product_was_successfully_created: 'The product was successfully created'
   product_was_successfully_updated: 'The product was successfully updated'

@@ -1,0 +1,6 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h1 class ="head1">Please submit here your payment information</h1>
+<h2 class ="head2">Your total bill is <%= number_to_currency(@billing) %> </h2>
+<%= render 'formpay' %>
