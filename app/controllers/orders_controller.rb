@@ -108,13 +108,20 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
     @order.userid = current_user.id
+    #we need to define the order status;
+    #perhaps 
+    # "Order sent, waiting for your payment information"
+    # "Payment information received, cheking your details"
+    # "Payment checked, your order has been sent to your ship address"
 
+    @order.status = "Order sent, waiting for your payment information"
     captcha_message = "The data you entered for the CAPTCHA wasn't correct.  Please try again"
     
     # if verify_recaptcha
     # @order.user
       respond_to do |format|
         if @order.save
+          OrderNotifier.received(@order,current_user)
           Cart.destroy(session[:cart_id])
           session[:cart_id] = nil
           format.html { redirect_to store_index_path, notice: "Thank you for your order!. 

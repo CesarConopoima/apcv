@@ -2,7 +2,7 @@ class Order < ActiveRecord::Base
 	has_many :line_items, dependent: :destroy
 
 	validates :username, :address, :email, :address,:address2,
-	:telephone1,:telephone2,:shipping,:shipcountry, presence: true
+	:telephone1,:telephone2,:shipcountry, presence: true
 
 	validates :accept, acceptance: { accept: true }
 
