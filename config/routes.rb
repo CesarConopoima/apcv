@@ -3,7 +3,7 @@ Americanparts::Application.routes.draw do
   # get "page/index"
   scope "(:locale)", :locale => /en|es/ do
     root :to => 'store#home'
-    # get :send_promotion_mail, to: 'products#send_promotion_mail', as: :send_promotion_mail
+    get :send_promotion_mail, to: 'products#send_promotion_mail', as: :send_promotion_mail
     post :send_promotion_mail, to: 'products#send_promotion_mail', as: :send_promotion_mail
     get "products/promotion"
     resources :products

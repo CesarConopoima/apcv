@@ -10,6 +10,10 @@
 	});
 
 </script>
+<% if notice || alert %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% end %>
 <h1><%= t('.title') %></h1>
 
 
