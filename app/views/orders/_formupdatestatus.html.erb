@@ -1,0 +1,23 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h3><i class="fa fa-info"></i> Update Order  </h3>
+<table class="fillTable">
+      <tr>
+        <td class ="fieldForm"><%= f.label :status %></td>
+        <td><%= f.select :status, Order::ORDER_STATUS, 
+    prompt: "Status"  %></td>
+      </tr>
+</table>
+<div class="actions">
+    <%= f.submit :class => "button" %>  
+</div>
+<% end %>
