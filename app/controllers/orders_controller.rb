@@ -158,7 +158,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        if @order.paytype != nil and @order.bankname != nil and @order.refernumber != nil
+        if @order.bankname != nil and @order.refernumber != nil
           #here goes anothe mailer to inform about payment info received
           @order.status = "Payment information received, cheking your details"
           @order.save
