@@ -4,10 +4,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
-	<h1>Hello, </h1> 
-	<h2></h2> 
-	<p>Hello <%= @user.username %>
-	We have received your order, the order is currently under the status: <%= @order.status %>
+	<h1 style="color:#2F516D;font-size:1.5em;text-align:center">USA Compressor Parts</h1>
+	<h2>Hello <span style="color:#2F516D;font-size:1.25em;"><%= @user.username %></span></h2> 
+	<p>
+		We have received your order, now we will be waiting for your payment information. <br>
+		Please go orders in your site, and fill the corresponding information.<br><br>
+		Your order is currently under the status: <br>
+		<span style="color:#f18857;font-size:1.5em"><%= @order.status %></span>
 	</p>
+	<br><br>
+	<p style="color:#c5c5c5;font-size:0.75em">
+		**IMPORTANT**<br>
+		This mail has been sent, from <i>USA compressor parts</i>, replies to this same mail will not be processed.
+	</p>
+
   </body>
 </html>

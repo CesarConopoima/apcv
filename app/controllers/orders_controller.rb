@@ -158,8 +158,26 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        format.html { redirect_to store_orderstatus_path, notice: 'Your order was successfully updated, an email has been sent' }
-        format.json { head :no_content }
+        if @order.paytype != nil and @order.bankname != nil and @order.refernumber != nil
+          #here goes anothe mailer to inform about payment info received
+          @order.status = "Payment information received, cheking your details"
+          @order.save
+          OrderNotifier.paymentinformation(@order,current_user).deliver
+          format.html { redirect_to store_orderstatus_path, 
+          #this notice should be sent only when users save the correct params for the payment info.
+          notice: 'The payment information has been sent, we will process it in the next hours' }
+          format.json { head :no_content }
+        elsif @order.status.include?("Payment checked")
+          format.html { redirect_to order, 
+          #this notice should be sent only when users save the correct params for the payment info.
+          notice: 'An email has been sent to the client. The client is waiting for his order' }
+          format.json { head :no_content }
+        else
+          format.html { redirect_to store_orderstatus_path, 
+          #this notice should be sent only when users save the correct params for the payment info.
+          notice: 'Your payment information is not complete!, please enter all field to proccess the payment.' }
+          format.json { head :no_content }
+        end
       else
         format.html { render action: "edit" }
         format.json { render json: @order.errors, status: :unprocessable_entity }

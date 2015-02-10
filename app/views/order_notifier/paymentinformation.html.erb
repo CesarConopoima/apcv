@@ -4,8 +4,17 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-	<h1 style="color:blue;">Hi, you User welcome to Our Email test.</h1> 
-	<!--%= image_tag attachments['image.jpg'].url %-->
-	<%= image_tag('image_name.jpg') %>
+	<h1 style="color:#2F516D;font-size:1.5em;text-align:center">USA Compressor Parts</h1>
+	<h2>Hello <span style="color:#2F516D;font-size:1.25em;"><%= @user.username %></span></h2> 
+	<p>
+		We have received your payment information, we will proccess it in next hours. <br>
+		Your order is currently under the status: <br>
+		<span style="color:#b0d5ff;font-size:1.5em"><%= @order.status %></span>
+	</p>
+	<br><br>
+	<p style="color:#c5c5c5;font-size:0.75em">
+		**IMPORTANT**<br>
+		This mail has been sent, from <i>USA compressor parts</i>, replies to this same mail will not be processed.
+	</p>
   </body>
 </html>
