@@ -121,7 +121,7 @@ class OrdersController < ApplicationController
     # @order.user
       respond_to do |format|
         if @order.save
-          OrderNotifier.received(@order,current_user)
+          OrderNotifier.received(@order,current_user).deliver
           Cart.destroy(session[:cart_id])
           session[:cart_id] = nil
           format.html { redirect_to store_index_path, notice: "Thank you for your order!. 
