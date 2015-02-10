@@ -13,7 +13,7 @@ class Order < ActiveRecord::Base
 	
 	SHIPPING_OPTION = ["DHL","FEDEX","UPS"]
 	PAYMENT_TYPES = [ "Bank Deposit", "Check", "Electronic Transfer"]
-	ORDER_STATUS = ["Payment checked, your order has been sent to your ship address"]
+	ORDER_STATUS = ["Payment checked, your order has been sent to your shipping address","Payment Unchecked, the information you have submited couldn't be confirmed, please check and resent the information, or contac us!."]
 
 	def self.orders(user)
 		where("userid = ?",user)

@@ -1,10 +1,10 @@
 <h1>Listing orders</h1>
 
 <table class="products" width="100%" style="table-layout: fixed; ">
-    <col width="100px">
-    <col width="100px">
+    <col width="70px">
+    <col width="70px">
     <col width="200px">
-    <col width="100px">
+    <col width="200px">
     <col width="100px">
     <col width="100px">
     <col width="100px">
@@ -23,15 +23,19 @@
 <% @orders.each do |order| %>
   <tr>
     <td><%= order.username %></td>
-    <td><%= order.shipping %></td>
+    <td><%= order.shipcountry %></td>
     <td><%= order.email %></td>
-    <td><%= order.status %></td>
+    <% @color = "#f9cfbb" if order.status.include?("waiting for your payment information") %>
+    <% @color = "#8297a0" if order.status.include?("received") %>
+    <% @color = "#a1c9af" if order.status.include?("Payment checked") %>
+    <% @color = "#ed4527" if order.status.include?("Payment Unchecked") %>
+    <td style="color:black;background:<%= @color %>"><%= order.status %></td>
     <td><%= order.paytype %></td>
     <td><%= order.created_at %></td>
     <td><%= order.updated_at %></td>
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, method: :delete %></td>
+    <td><%= link_to 'Destroy', order, confirm: 'Sure you want to erase this order?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

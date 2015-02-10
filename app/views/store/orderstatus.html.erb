@@ -10,7 +10,13 @@
 	<div class="tabOrder">
 	<h3 class="orderTitle"><%= t('.order_details') %></h3>
 	<p> <%= t('.created_at') %>:  <%= order.created_at %>	<br>
-		<%= t('.status') %>: <%= order.status %> <br>
+	<% @color = "#f18857" if order.status.include?("waiting for your payment information") %>
+	<% @color = "#063041" if order.status.include?("received") %>
+	<% @color = "#147939" if order.status.include?("Payment checked") %>
+	<% @color = "#ed4527" if order.status.include?("Payment Unchecked") %>
+	<p style="color:<%= @color %>;font-size:1.25em">	<%= t('.status') %>: 
+		<span style="font-style:italic"><b><%= order.status %></b><span> </p><br>
+	<p>	
 	<table class="OrderDetailTable">	
 		<tr>
 			<th><%= t('.code') %></th>

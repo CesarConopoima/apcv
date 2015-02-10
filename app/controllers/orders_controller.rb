@@ -158,8 +158,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        if @order.bankname != nil and @order.refernumber != nil
-          #here goes anothe mailer to inform about payment info received
+        if @order.paytype != "" and @order.bankname != "" and @order.refernumber != "" and !@order.status.include?("Payment checked") and !@order.status.include?("Payment Unchecked")
           @order.status = "Payment information received, cheking your details"
           @order.save
           OrderNotifier.paymentinformation(@order,current_user).deliver
@@ -167,15 +166,21 @@ class OrdersController < ApplicationController
           #this notice should be sent only when users save the correct params for the payment info.
           notice: 'The payment information has been sent, we will process it in the next hours' }
           format.json { head :no_content }
+        #this line is not working
         elsif @order.status.include?("Payment checked")
+          OrderNotifier.paymentchecked(@order,current_user).deliver
+          format.html { redirect_to @order,notice: 'An email has been sent to the client. The client is waiting to receive his order' } 
+          format.json { head :no_content }
+        elsif @order.status.include?("Payment Unchecked")
+          OrderNotifier.paymentunchecked(@order,current_user).deliver
           format.html { redirect_to order, 
-          #this notice should be sent only when users save the correct params for the payment info.
-          notice: 'An email has been sent to the client. The client is waiting for his order' }
+          #this notice should be sent only when users save the uncorrect info for the payment.
+          notice: "An email has been sent to the client. To notify that the payment information couldn't confirmed" }
           format.json { head :no_content }
         else
-          format.html { redirect_to store_orderstatus_path, 
+          format.html { redirect_to :back, 
           #this notice should be sent only when users save the correct params for the payment info.
-          notice: 'Your payment information is not complete!, please enter all field to proccess the payment.' }
+          alert: 'Your payment information is not complete!, please enter all field to proccess the payment.' }
           format.json { head :no_content }
         end
       else

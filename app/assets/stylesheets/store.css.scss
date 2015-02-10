@@ -292,14 +292,28 @@ $radius: 20px;
   padding-left:25px;
   color:#1a3745;
   }
-  .notice {
+  #notice {
   font-size:1.5em;
-  background-color:#bbe6cb;
+  background-color:#d0e4d7;
   color: #147939;
-  height:25px;
+  border-style:solid;
+  border-color:#147939;
+  height:45px;
   width:80%;
   margin-left:40px;
   text-align:center;
+  }
+  #alert {
+    font-size:1.5em;
+    background-color:#f59887;
+    border-style:solid;
+    border-color:#ed4527;
+    color: #ed4527;
+    height:45px;
+    width:80%;
+    padding-top:10px;
+    margin-left:40px;
+    text-align:center;
   }
   .links {
     padding-bottom:10px;

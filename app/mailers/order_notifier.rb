@@ -14,4 +14,16 @@ class OrderNotifier < ActionMailer::Base
   	mail(to: email, subject: "Payment information received")
   	#here should goes another mail to admin to procced payment information
   end
+  def paymentchecked(order,user)
+    @order  = order
+    @user   = user
+    email = order.email
+    mail(to: email, subject: "Payment information checked!")
+  end
+  def paymentunchecked(order,user)
+    @order  = order
+    @user   = user
+    email = order.email
+    mail(to: email, subject: "Payment information Unchecked!")
+  end
 end
