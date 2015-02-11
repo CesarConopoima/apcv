@@ -69,7 +69,9 @@ class Devise::RegistrationsController < DeviseController
     @products = Product.search(false)
     @cart = current_cart
 
+    @user = current_user
     render :edit
+
  end
 
   # PUT /resource
@@ -130,13 +132,13 @@ class Devise::RegistrationsController < DeviseController
         end
       else
           respond_to do |format|
-          format.html { redirect_to :back, notice: "Your account can't be eliminated, you have pendding orders" }
+          format.html { redirect_to :back, alert: "Your account can't be eliminated, you have pendding orders" }
           format.json { head :no_content }
         end
       end
     rescue RuntimeError
       respond_to do |format|
-        format.html { redirect_to :back, notice: "You can't eliminate admin" }
+        format.html { redirect_to :back, alert: "You can't eliminate admin" }
         format.json { head :no_content }
       end
     end
