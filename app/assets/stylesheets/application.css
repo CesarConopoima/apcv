@@ -40,6 +40,12 @@
   height: 110px;
   background: white;
 }
+.logo {
+  position:absolute;
+  float:left;
+  height: 110px;
+  width:100%;
+}
 
 #loginLangua {
   position:relative;
@@ -145,9 +151,3 @@ div .login{
   padding-left: 50px;
 }
 
-.logo {
-  position:absolute;
-  margin-left: 200px;
-  float:left;
-  width:250px;
-}
