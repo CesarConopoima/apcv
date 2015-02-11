@@ -1,6 +1,8 @@
-<% if notice || alert %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if notice %>
+<p id="notice"><i class="fa fa-check" style="color:#147939;"> <%= notice %></p>
+<% elsif alert %>
+<p id="alert"><%= alert %></p>
+<br>
 <% end %>
 <h1 class="title3"><%= t('.title') %></h1><br>
 	

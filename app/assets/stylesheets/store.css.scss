@@ -293,23 +293,18 @@ $radius: 20px;
   color:#1a3745;
   }
   #notice {
-  font-size:1.5em;
-  background-color:#d0e4d7;
+  font-size:1.25em;
+  background:#d0e4d7;
+  font-style:bold;
   color: #147939;
-  border-style:solid;
-  border-color:#147939;
-  height:45px;
   width:80%;
   margin-left:40px;
   text-align:center;
   }
   #alert {
-    font-size:1.5em;
-    background-color:#f59887;
-    border-style:solid;
-    border-color:#ed4527;
-    color: #ed4527;
-    height:45px;
+    font-size:1.25em;
+    background:#ffb3b3;
+    color: #b20101;
     width:80%;
     padding-top:10px;
     margin-left:40px;
