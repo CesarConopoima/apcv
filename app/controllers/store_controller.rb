@@ -23,7 +23,7 @@ class StoreController < ApplicationController
     @products = Product.search(params[:search])
     @cart = current_cart
     
-    flash[:notice] = "Please login, for making your order"
+    flash[:notice] = "Please login, for making orders"
 
     if current_user
       @user = current_user.id
