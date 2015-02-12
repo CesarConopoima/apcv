@@ -31,7 +31,7 @@
     <td><%= user.stateprovince %></td>
     <td><%= user.zipcode %></td>
     <td><%= user.common %></td>
-    <td> <%= link_to "Erase", user_path(user), :method => :delete %></td>
+    <td> <%= link_to "Erase", user_path(user), confirm: 'Sure you want to erase this user?',:method => :delete %></td>
     <td> <%= link_to "Show", user %></td>
     <td></td>
     <td></td>
