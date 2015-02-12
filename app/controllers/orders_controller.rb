@@ -114,8 +114,8 @@ class OrdersController < ApplicationController
     # "Payment information received, cheking your details"
     # "Payment checked, your order has been sent to your ship address"
 
-    @order.status = "Order sent, waiting for your payment information"
-    captcha_message = "The data you entered for the CAPTCHA wasn't correct.  Please try again"
+    @order.status = "Order sent. Please complete your payment information"
+    captcha_message = "Incorrect CAPTCHA. Please try again"
     
     # if verify_recaptcha
     # @order.user
@@ -124,9 +124,7 @@ class OrdersController < ApplicationController
           OrderNotifier.received(@order,current_user).deliver
           Cart.destroy(session[:cart_id])
           session[:cart_id] = nil
-          format.html { redirect_to store_index_path, notice: "Thank you for your order!. 
-            You will receive a confirmation email. Please complete your payment information 
-            in your account's order section." }
+          format.html { redirect_to store_index_path, notice: "Thank you for your order! You will receive a confirmation email. Please complete your payment information in your account's order section." }
           format.json { render json: @order, status: :created, location: @order }
         else
           @cart = current_cart
@@ -159,12 +157,12 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.update_attributes(params[:order])
         if @order.paytype != "" and @order.bankname != "" and @order.refernumber != "" and !@order.status.include?("Payment checked") and !@order.status.include?("Payment Unchecked")
-          @order.status = "Payment information received, cheking your details"
+          @order.status = "Payment information received, cheking your details..."
           @order.save
           OrderNotifier.paymentinformation(@order,current_user).deliver
           format.html { redirect_to store_orderstatus_path, 
           #this notice should be sent only when users save the correct params for the payment info.
-          notice: 'The payment information has been sent, we will process it in the next hours' }
+          notice: 'The payment information has been sent. It will be processed in the next hours' }
           format.json { head :no_content }
         #this line is not working
         elsif @order.status.include?("Payment checked")
@@ -175,12 +173,12 @@ class OrdersController < ApplicationController
           OrderNotifier.paymentunchecked(@order,current_user).deliver
           format.html { redirect_to order, 
           #this notice should be sent only when users save the uncorrect info for the payment.
-          notice: "An email has been sent to the client. To notify that the payment information couldn't confirmed" }
+          notice: "An email has been sent to the client notifying that the payment information couldn't be confirmed" }
           format.json { head :no_content }
         else
           format.html { redirect_to :back, 
           #this notice should be sent only when users save the correct params for the payment info.
-          alert: 'Your payment information is not complete!, please enter all field to proccess the payment.' }
+          alert: 'Your payment information is not complete! Please enter all the fields to proccess the payment.' }
           format.json { head :no_content }
         end
       else
