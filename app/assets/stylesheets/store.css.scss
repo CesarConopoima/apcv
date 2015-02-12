@@ -3,13 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .store {
-  .photo {
-  position:relative;
-  width:320px;
-  -webkit-animation: round 16s infinite; /* Safari 4+ */
-  opacity:0;
-  display: inline;
-}
+  
 
 $size: 45%;
 $fontSize: 2.0em;
@@ -38,9 +32,9 @@ $radius: 20px;
         color: #004466;   
       } 
 
-      #gear {
+      #check {
       font-size: $fontSize;  
-      color: #004466;   
+      color: #e59400;   
       }
 
       .icons {
@@ -55,12 +49,27 @@ $radius: 20px;
     }
 
     .content2 {
-    float:left;
-    padding-left:5px;
-    size:20px;
     width:$size;
     color:white;
-    display:inline;
+    margin-left:120px;
+    margin-top:10px;
+    margin-bottom:10px;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;  
+       #object {
+        font-size: $fontSize;  
+        color: white;   
+      } 
+      .icons {
+        text-align:center;
+        font-size: $fontSize;
+      }
+    .text {
+        padding-left: 30px;
+        font-size:1.5em;
+        text-align:center;
+      }
     }
    
 

@@ -6,8 +6,20 @@
   25%{opacity:1;}
   40%{opacity:0;}
 }*/ 
+.photo {
+  position:relative;
+  width:320px;
+  -webkit-animation: round 16s infinite; /* Safari 4+ */
+  animation: round 16s infinite; /* Safari 4+ */
+  opacity:0;
+  display: inline;
+}
 
 @-webkit-keyframes round {   
+  25%{opacity:1;}
+  40%{opacity:0;}
+}
+@keyframes round {   
   25%{opacity:1;}
   40%{opacity:0;}
 } 
@@ -47,22 +59,17 @@ img:nth-child(1){-webkit-animation-delay:12s;}
 		</div>
 
 		<div class = "content1">	
-			<p class = "icons"><i class="fa fa-cogs" id="gear"></i> </p>
+			<p class = "icons"><i class="fa fa-check-square" id="check"></i></i> </p>
 			<p class = "text"><%= t('.text2') %>  
 			</p>
 		</div>
 
-		<div class = "content1">	
-			<p class = "icons"><i class="fa fa-globe" id="globe"></i> </p>
+		<div class = "content2">	
+			<p class = "icons"><i class="fa fa-thumb-tack" id ="object"></i></i> </p>
 			<p class = "text"> <%= t('.text3') %> 
 			</p>
 		</div>
 
-		<div class = "content1">	
-			<p class = "icons"><i class="fa fa-globe" id="globe"></i> </p>
-			<p class = "text"> <%= t('.text3') %>  
-			</p>
-		</div>
 	</div>
 
 	<div class = "container">
