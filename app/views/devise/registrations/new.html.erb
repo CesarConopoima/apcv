@@ -1,3 +1,8 @@
+<% if notice %>
+<p id="notice"><i class="fa fa-check" style="color:#147939;"> <%= notice %></p>
+<% elsif alert %>
+<p id="alert"> <i class="fa fa-exclamation-triangle" style="color#990101;"></i> <%= alert %></p>
+<% end %>
 
 <h2 class="title2"><i class="fa fa-user"></i> <%= t('.title') %></h2>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
