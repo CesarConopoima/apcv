@@ -3,7 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .store {
-  
+  .photo {
+  position:relative;
+  width:320px;
+  -webkit-animation: round 16s infinite; /* Safari 4+ */
+  opacity:0;
+  display: inline;
+}
 
 $size: 45%;
 $fontSize: 2.0em;
