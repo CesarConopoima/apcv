@@ -69,7 +69,7 @@ class OrdersController < ApplicationController
       end
 
       if @cart.line_items.empty? || @flag == true
-        redirect_to store_index_path, notice: "Your cart is empty or has products with negative prices"
+        redirect_to store_index_path, flash.now[:alert] = "Your cart is empty or has products with negative prices"
         return
       end
     
