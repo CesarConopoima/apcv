@@ -85,6 +85,8 @@ en:
    new:
     Sing_in: "Entrar"
  store:
+  contact:
+   title: "Contact Us"
   orderstatus:
    title: "Check the status of your Order"
   index:

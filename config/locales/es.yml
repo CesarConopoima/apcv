@@ -86,6 +86,8 @@ es:
    new:
     Sing_in: "Entrar"
  store:
+  contact:
+   title: "Contactanos"
   index:
    title: "Consiga el producto de su marca favorita"
    searchsubmit: "Buscar"
