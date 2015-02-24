@@ -66,10 +66,10 @@ class Product < ActiveRecord::Base
   		find_by_sql("select split_part(name,' ', 1) || ' ' || split_part(name,' ', 2) AS names,count(*) AS number from products where marc = 'Bitzer' and flagmis='no' group by names order by names")
   	end
   	def self.trane
-  		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Trane' and flagmis='no' group by names order by names")
+  		find_by_sql("select split_part(name,' ', 1) || ' ' || split_part(name,' ', 2) AS names,count(*) AS number from products where marc = 'Trane' and flagmis='no' group by names order by names")
   	end
   	def self.york
-  		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'York' and flagmis='no' group by names order by names")
+  		find_by_sql("select split_part(name,' ', 1) || ' ' || split_part(name,' ', 2) AS names,count(*) AS number from products where marc = 'York' and flagmis='no' group by names order by names")
   	end
 
   	def self.detailproduct(name,brand)
