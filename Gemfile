@@ -45,6 +45,8 @@ gem 'paperclip'
 
 gem 'aws-sdk'
 
+gem 'puma'
+
 #gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
