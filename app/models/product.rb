@@ -54,7 +54,7 @@ class Product < ActiveRecord::Base
 
 
 	def self.marcas
-  		find_by_sql("select marc from products group by marc order by marc")
+  		find_by_sql("select marc from products group by marc")
   	end
   	def self.copeland
   		find_by_sql("select split_part(name,' ', 1) AS names,count(*) AS number from products where marc = 'Copeland' and flagmis='no' group by names order by names")
