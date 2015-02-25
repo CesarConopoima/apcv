@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
 	has_many :line_items
 	before_destroy :ensure_not_referenced_by_any_line_item
 
-	validates :name, :code, :marc,:quantity, :price,:imageurl,:model,:flagmis, presence: true
+	validates :name, :code, :marc,:quantity, :price,:model, presence: true
 	validates :price, numericality: {greater_than_or_equal_to: 0.1}
 	validates :code, uniqueness: true
 
@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
 
   	validates_attachment :attachedimg, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }, :size => { :in => 0..3000.kilobytes }
 
-
+  	before_create :set_img
 
 	MISCELANEUS = [ "no", "si" ]
 	PROMOTION = [ "si", "no" ]	
@@ -93,5 +93,9 @@ private
 			errors.add(:base, 'Line Items present')
 			return false
 		end
+	end
+	def set_img
+	  self.imageurl = 'logo/no_dispo.jpg'
+	  self.flagmis = 'no'
 	end
 end
